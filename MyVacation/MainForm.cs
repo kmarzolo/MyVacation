@@ -12,8 +12,9 @@ namespace MyVacation
 {
     public partial class MainForm : Form
     {
-        LinkedList<LoginEntry> logins = new LinkedList<LoginEntry>();
-        ListOps listoperations;
+        LinkedList<LoginEntry> logins = new LinkedList<LoginEntry>(); //to hold all accounts
+        LinkedList<Flight> flights = new LinkedList<Flight>(); //to hold all flights
+        ListOps listoperations; //methods for updating lists
         LoginEntry entry;
         Point startpoint;
 
@@ -74,6 +75,11 @@ namespace MyVacation
             PasswordLabel.Hide();
             SignUpButton.Show();
             LoginButton.Location = startpoint;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

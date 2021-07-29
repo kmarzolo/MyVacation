@@ -13,6 +13,16 @@ public struct LoginEntry
     public string password;
 };
 
+public struct Flight
+{
+    //used for flight information
+    public string startLocation;
+    public string endLocation;
+    public string departDate;
+    public string returnDate;
+    public int price;
+}
+
 namespace MyVacation
 {
     //class has methods for searching linked lists

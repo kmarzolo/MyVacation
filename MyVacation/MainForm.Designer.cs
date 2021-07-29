@@ -37,6 +37,10 @@ namespace MyVacation
             this.CancelButton = new System.Windows.Forms.Button();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.PasswordLabel = new System.Windows.Forms.Label();
+            this.LocationBox = new System.Windows.Forms.TextBox();
+            this.DepartBox = new System.Windows.Forms.TextBox();
+            this.ReturnBox = new System.Windows.Forms.TextBox();
+            this.SearchButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -120,11 +124,55 @@ namespace MyVacation
             this.PasswordLabel.TabIndex = 7;
             this.PasswordLabel.Text = "Password";
             // 
+            // LocationBox
+            // 
+            this.LocationBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocationBox.ForeColor = System.Drawing.Color.Silver;
+            this.LocationBox.Location = new System.Drawing.Point(163, 150);
+            this.LocationBox.Name = "LocationBox";
+            this.LocationBox.Size = new System.Drawing.Size(154, 26);
+            this.LocationBox.TabIndex = 8;
+            this.LocationBox.Text = "Enter Location";
+            // 
+            // DepartBox
+            // 
+            this.DepartBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DepartBox.ForeColor = System.Drawing.Color.Silver;
+            this.DepartBox.Location = new System.Drawing.Point(328, 150);
+            this.DepartBox.Name = "DepartBox";
+            this.DepartBox.Size = new System.Drawing.Size(154, 26);
+            this.DepartBox.TabIndex = 9;
+            this.DepartBox.Text = "Enter Depart Date";
+            // 
+            // ReturnBox
+            // 
+            this.ReturnBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnBox.ForeColor = System.Drawing.Color.Silver;
+            this.ReturnBox.Location = new System.Drawing.Point(491, 149);
+            this.ReturnBox.Name = "ReturnBox";
+            this.ReturnBox.Size = new System.Drawing.Size(154, 26);
+            this.ReturnBox.TabIndex = 10;
+            this.ReturnBox.Text = "Enter Return Date";
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.Location = new System.Drawing.Point(328, 228);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(142, 26);
+            this.SearchButton.TabIndex = 11;
+            this.SearchButton.Text = "Search Flights";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 461);
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.ReturnBox);
+            this.Controls.Add(this.DepartBox);
+            this.Controls.Add(this.LocationBox);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.CancelButton);
@@ -135,6 +183,7 @@ namespace MyVacation
             this.Controls.Add(this.label1);
             this.Name = "MainForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,6 +199,10 @@ namespace MyVacation
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Label UsernameLabel;
         private System.Windows.Forms.Label PasswordLabel;
+        private System.Windows.Forms.TextBox LocationBox;
+        private System.Windows.Forms.TextBox DepartBox;
+        private System.Windows.Forms.TextBox ReturnBox;
+        private System.Windows.Forms.Button SearchButton;
     }
 }
 
