@@ -14,7 +14,7 @@ namespace MyVacation
     {
         LinkedList<LoginEntry> logins = new LinkedList<LoginEntry>(); //to hold all accounts
         LinkedList<Flight> flights = new LinkedList<Flight>(); //to hold all flights
-        ListOps listoperations; //methods for updating lists
+        ListOps listoperations = new ListOps(); //methods for updating lists
         LoginEntry entry;
         Point startpoint;
 
@@ -62,6 +62,7 @@ namespace MyVacation
                 entry.password = PasswordBox.Text;
 
                 listoperations.Search(ref entry, ref logins);
+                label1.Text = entry.firstName;
             }
         }
 

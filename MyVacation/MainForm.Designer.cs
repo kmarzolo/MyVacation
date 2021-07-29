@@ -60,7 +60,7 @@ namespace MyVacation
             this.LoginButton.Location = new System.Drawing.Point(717, 12);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 35);
-            this.LoginButton.TabIndex = 1;
+            this.LoginButton.TabIndex = 3;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
@@ -72,7 +72,7 @@ namespace MyVacation
             this.SignUpButton.Location = new System.Drawing.Point(716, 56);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(76, 35);
-            this.SignUpButton.TabIndex = 2;
+            this.SignUpButton.TabIndex = 4;
             this.SignUpButton.Text = "Sign Up";
             this.SignUpButton.UseVisualStyleBackColor = true;
             this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
@@ -83,7 +83,7 @@ namespace MyVacation
             this.UsernameBox.Location = new System.Drawing.Point(638, 12);
             this.UsernameBox.Name = "UsernameBox";
             this.UsernameBox.Size = new System.Drawing.Size(154, 26);
-            this.UsernameBox.TabIndex = 3;
+            this.UsernameBox.TabIndex = 0;
             // 
             // PasswordBox
             // 
@@ -91,7 +91,7 @@ namespace MyVacation
             this.PasswordBox.Location = new System.Drawing.Point(638, 44);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.Size = new System.Drawing.Size(154, 26);
-            this.PasswordBox.TabIndex = 4;
+            this.PasswordBox.TabIndex = 1;
             // 
             // CancelButton
             // 
@@ -131,7 +131,7 @@ namespace MyVacation
             this.LocationBox.Location = new System.Drawing.Point(163, 150);
             this.LocationBox.Name = "LocationBox";
             this.LocationBox.Size = new System.Drawing.Size(154, 26);
-            this.LocationBox.TabIndex = 8;
+            this.LocationBox.TabIndex = 6;
             this.LocationBox.Text = "Enter Location";
             // 
             // DepartBox
@@ -141,7 +141,7 @@ namespace MyVacation
             this.DepartBox.Location = new System.Drawing.Point(328, 150);
             this.DepartBox.Name = "DepartBox";
             this.DepartBox.Size = new System.Drawing.Size(154, 26);
-            this.DepartBox.TabIndex = 9;
+            this.DepartBox.TabIndex = 7;
             this.DepartBox.Text = "Enter Depart Date";
             // 
             // ReturnBox
@@ -151,7 +151,7 @@ namespace MyVacation
             this.ReturnBox.Location = new System.Drawing.Point(491, 149);
             this.ReturnBox.Name = "ReturnBox";
             this.ReturnBox.Size = new System.Drawing.Size(154, 26);
-            this.ReturnBox.TabIndex = 10;
+            this.ReturnBox.TabIndex = 8;
             this.ReturnBox.Text = "Enter Return Date";
             // 
             // SearchButton
@@ -160,7 +160,7 @@ namespace MyVacation
             this.SearchButton.Location = new System.Drawing.Point(328, 228);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(142, 26);
-            this.SearchButton.TabIndex = 11;
+            this.SearchButton.TabIndex = 9;
             this.SearchButton.Text = "Search Flights";
             this.SearchButton.UseVisualStyleBackColor = true;
             // 

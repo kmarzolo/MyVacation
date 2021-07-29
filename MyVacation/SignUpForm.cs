@@ -70,6 +70,7 @@ namespace MyVacation
                 return;
             }
 
+            Message.ForeColor = Color.Red;
             Message.Text = " ";
 
             //user enters information
@@ -87,7 +88,8 @@ namespace MyVacation
 
             //tests passed, add user
             temp.AddLast(entry);
-
+            Message.ForeColor = Color.Black;
+            Message.Text = "Sign up Successful, Press Cancel";
         }
     }
 }
