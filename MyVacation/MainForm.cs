@@ -17,6 +17,7 @@ namespace MyVacation
         ListOps listoperations = new ListOps(); //methods for updating lists
         LoginEntry entry;
         Point startpoint;
+        bool loginFound;
 
         public MainForm()
         {//startup form, first page user sees
@@ -42,6 +43,7 @@ namespace MyVacation
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
+            loginFound = false;
             //if login button hasn't been clicked yet
             //click to reveal login fields
             if (LoginButton.Location == startpoint)
@@ -53,6 +55,7 @@ namespace MyVacation
                 PasswordBox.Show();
                 PasswordLabel.Show();
                 SignUpButton.Hide();
+                Message.Hide();
             }
             //user enters login information
             //search for their account
@@ -60,21 +63,34 @@ namespace MyVacation
             {
                 entry.username = UsernameBox.Text;
                 entry.password = PasswordBox.Text;
+                Message.Show();
 
-                listoperations.Search(ref entry, ref logins);
-                label1.Text = entry.firstName;
+                //search for account
+                loginFound = listoperations.Verify(ref entry, ref logins);
+                if(loginFound)
+                {
+                    Message.Text = "Login Successful";
+                    Welcome.Text = "Welcome, " + entry.firstName;
+                }
+                if(!loginFound)
+                {
+                    Message.Text = "Login Failed";
+                    Welcome.Text = "Welcome";
+                    return;
+                }
             }
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            //if cancel button is click, hide login fields
+            //if cancel button is clicked, hide login fields
             CancelButton.Hide();
             UsernameBox.Hide();
             UsernameLabel.Hide();
             PasswordBox.Hide();
             PasswordLabel.Hide();
             SignUpButton.Show();
+            Message.Hide();
             LoginButton.Location = startpoint;
         }
 

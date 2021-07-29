@@ -53,6 +53,33 @@ namespace MyVacation
             return false;
         }//end of method
 
+        public bool Verify(ref LoginEntry login, ref LinkedList<LoginEntry> loglist)
+        {//search list and check if password is correct
+            bool usernamefound = false;
+            
+            //check if list is empty first
+            if ((loglist.First == null) && (loglist.Last == null))
+            {
+                return false;
+            }
+            temp = loglist.First;
 
+            //search through list
+            while (!(temp == null))
+            {
+                if (temp.Value.username == login.username)
+                {
+                    if (login.password == temp.Value.password)
+                    {
+                        login = temp.Value;
+                        return true;
+                    }
+                }
+                temp = temp.Next;
+            }
+
+
+            return false;
+        }
     }
 }

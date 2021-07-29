@@ -41,12 +41,14 @@ namespace MyVacation
             this.DepartBox = new System.Windows.Forms.TextBox();
             this.ReturnBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.Welcome = new System.Windows.Forms.Label();
+            this.Message = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 56);
+            this.label1.Location = new System.Drawing.Point(2, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(800, 57);
             this.label1.TabIndex = 0;
@@ -128,7 +130,7 @@ namespace MyVacation
             // 
             this.LocationBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LocationBox.ForeColor = System.Drawing.Color.Silver;
-            this.LocationBox.Location = new System.Drawing.Point(163, 150);
+            this.LocationBox.Location = new System.Drawing.Point(163, 210);
             this.LocationBox.Name = "LocationBox";
             this.LocationBox.Size = new System.Drawing.Size(154, 26);
             this.LocationBox.TabIndex = 6;
@@ -138,7 +140,7 @@ namespace MyVacation
             // 
             this.DepartBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DepartBox.ForeColor = System.Drawing.Color.Silver;
-            this.DepartBox.Location = new System.Drawing.Point(328, 150);
+            this.DepartBox.Location = new System.Drawing.Point(328, 210);
             this.DepartBox.Name = "DepartBox";
             this.DepartBox.Size = new System.Drawing.Size(154, 26);
             this.DepartBox.TabIndex = 7;
@@ -148,7 +150,7 @@ namespace MyVacation
             // 
             this.ReturnBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReturnBox.ForeColor = System.Drawing.Color.Silver;
-            this.ReturnBox.Location = new System.Drawing.Point(491, 149);
+            this.ReturnBox.Location = new System.Drawing.Point(491, 209);
             this.ReturnBox.Name = "ReturnBox";
             this.ReturnBox.Size = new System.Drawing.Size(154, 26);
             this.ReturnBox.TabIndex = 8;
@@ -157,18 +159,40 @@ namespace MyVacation
             // SearchButton
             // 
             this.SearchButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchButton.Location = new System.Drawing.Point(328, 228);
+            this.SearchButton.Location = new System.Drawing.Point(328, 288);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(142, 26);
             this.SearchButton.TabIndex = 9;
             this.SearchButton.Text = "Search Flights";
             this.SearchButton.UseVisualStyleBackColor = true;
             // 
+            // Welcome
+            // 
+            this.Welcome.AutoSize = true;
+            this.Welcome.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Welcome.Location = new System.Drawing.Point(0, 0);
+            this.Welcome.Name = "Welcome";
+            this.Welcome.Size = new System.Drawing.Size(94, 22);
+            this.Welcome.TabIndex = 10;
+            this.Welcome.Text = "Welcome";
+            // 
+            // Message
+            // 
+            this.Message.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Message.Location = new System.Drawing.Point(574, 130);
+            this.Message.Name = "Message";
+            this.Message.Size = new System.Drawing.Size(228, 23);
+            this.Message.TabIndex = 11;
+            this.Message.Text = " ";
+            this.Message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(804, 461);
+            this.Controls.Add(this.Message);
+            this.Controls.Add(this.Welcome);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.ReturnBox);
             this.Controls.Add(this.DepartBox);
@@ -203,6 +227,8 @@ namespace MyVacation
         private System.Windows.Forms.TextBox DepartBox;
         private System.Windows.Forms.TextBox ReturnBox;
         private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.Label Welcome;
+        private System.Windows.Forms.Label Message;
     }
 }
 
