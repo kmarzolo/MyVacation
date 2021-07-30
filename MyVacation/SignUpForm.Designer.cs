@@ -57,6 +57,7 @@ namespace MyVacation
             this.PasswordBox.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordBox.Location = new System.Drawing.Point(258, 148);
             this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.PasswordChar = '*';
             this.PasswordBox.Size = new System.Drawing.Size(100, 29);
             this.PasswordBox.TabIndex = 3;
             // 
@@ -123,6 +124,7 @@ namespace MyVacation
             this.ConfirmBox.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmBox.Location = new System.Drawing.Point(258, 183);
             this.ConfirmBox.Name = "ConfirmBox";
+            this.ConfirmBox.PasswordChar = '*';
             this.ConfirmBox.Size = new System.Drawing.Size(100, 29);
             this.ConfirmBox.TabIndex = 4;
             // 

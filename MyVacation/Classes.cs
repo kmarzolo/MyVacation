@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//this class file is to contain public information and methods
+//that is meant to be accessed by the entire program
+
 public struct LoginEntry
 {
     //used for user's account information
@@ -25,7 +28,13 @@ public struct Flight
 
 namespace MyVacation
 {
-    //class has methods for searching linked lists
+    //class has methods for strings
+    public class StringOPs
+    {
+
+    }
+
+    //class has methods for manipulating linked lists
     public class ListOps
     {
         LinkedListNode<LoginEntry> temp;
