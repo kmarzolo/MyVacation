@@ -53,6 +53,7 @@ namespace MyVacation
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.SeePrices = new System.Windows.Forms.Button();
             this.FlightTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -349,6 +350,7 @@ namespace MyVacation
 
         #endregion
 
+        private System.Windows.Forms.Button SeePrices;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Button SignUpButton;

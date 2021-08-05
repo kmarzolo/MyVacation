@@ -60,7 +60,7 @@ namespace MyVacation
             if (LoginButton.Location == startpoint)
             {
 
-                LoginButton.Location = new Point(617, 78);
+                LoginButton.Location = new Point(589, 78);
                 CancelButton.Show();
                 UsernameBox.Show();
                 UsernameLabel.Show();
@@ -141,17 +141,18 @@ namespace MyVacation
                     city.TextAlign = ContentAlignment.MiddleCenter;
                     city.Font = new Font("Arial", 12, FontStyle.Regular);
 
-                    //create button for flight selection
-                    Button select = new Button();
-                    select.Text = "See Prices";
-                    select.Font = new Font("Arial", 10, FontStyle.Regular);
-                    select.AutoSize = true;
-
+                    //create button for purchasing flight
+                    this.SeePrices = new System.Windows.Forms.Button();
+                    this.SeePrices.Text = "See Prices";
+                    this.SeePrices.Font = new System.Drawing.Font("Arial", 10, System.Drawing.FontStyle.Regular);
+                    this.SeePrices.AutoSize = true;
+                    this.SeePrices.Name = "SeePrices";
+                    this.SeePrices.Click += new EventHandler(SeePrices_Click);
 
                     //Add row including available flight and select button
                     FlightTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
                     FlightTable.Controls.Add(city, 0, FlightTable.RowCount);
-                    FlightTable.Controls.Add(select, 3, FlightTable.RowCount);
+                    FlightTable.Controls.Add(SeePrices, 3, FlightTable.RowCount);
                     FlightTable.RowCount++;
                 }
 
@@ -163,6 +164,13 @@ namespace MyVacation
         private void FlightTable_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void SeePrices_Click(object sender, EventArgs e)
+        {
+            FlightForm flightform = new FlightForm();
+            flightform.ShowDialog();
+            
         }
     }
 }
