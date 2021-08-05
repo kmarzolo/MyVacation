@@ -17,16 +17,11 @@ namespace MyVacation
             InitializeComponent();
         }
 
-        
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        public FlightForm(string FlightLabelText)
         {
-
+            InitializeComponent();
+            FlightLabel.Text = FlightLabelText;
         }
 
-        private void AddRow_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

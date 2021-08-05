@@ -37,7 +37,7 @@ namespace MyVacation
             startpoint = LoginButton.Location;
 
             //collect list of all flights
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\kmarz\source\repos\CIS 376 - My Vacation\CIS 376 - My Vacation\Flight log.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\kmarz\source\repos\MyVacation\MyVacation\Flight Log.txt");
             foreach (string line in lines)
             {
                 flight.endLocation = line;
@@ -116,20 +116,14 @@ namespace MyVacation
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            /*
-            FlightForm flightform = new FlightForm();
-            flightform.ShowDialog();
-            */
-
             //collect search criteria
-            string location, departdate, returndate;
-            location = EndLocationBox.Text;
-            departdate = DepartBox.Text;
-            returndate = ReturnBox.Text;
+            string location = EndLocationBox.Text;
+            string departdate = DepartBox.Text;
+            string returndate = ReturnBox.Text;
 
             flightnode = flights.First;
 
-
+            //search
             while (flightnode.Next != null)
             {
                 if (flightnode.Value.endLocation.Contains(location))
@@ -140,6 +134,7 @@ namespace MyVacation
                     city.Dock = DockStyle.Fill;
                     city.TextAlign = ContentAlignment.MiddleCenter;
                     city.Font = new Font("Arial", 12, FontStyle.Regular);
+                    city.Name = city.Text;
 
                     //create button for purchasing flight
                     this.SeePrices = new System.Windows.Forms.Button();

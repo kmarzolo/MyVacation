@@ -1,0 +1,54 @@
+﻿Atlanta, GA, United States
+Orlando, FL, United States
+Fort Meyers, FL, United States
+Denver, CO, United States
+Myrtle Beach, SC, United States
+New Orleans, LA, United States
+Washington, DC, United States
+Charlotte, NC, United States
+Salt Lake City, UT, United States
+Louisville, KY, United States
+Kansas City, MO, United States
+New York, NY, United States
+Hartford, CT, United States
+Chicago, IL, United States
+Cancun, Mexico
+Puerto Vallarta, Mexico
+Ciudad Obregon, Mexico
+Guadalajara, Mexico
+Mazatian, Mexico
+Acapulco, Mexico
+Rome, Italy
+Bari, Italy
+Bologna, Italy
+Milan, Italy
+Montreal, Canada
+Calgary, Canada
+Edmonton, Canada
+Ottawa, Canada
+Toronto, Canada
+Winnepeg, Canada
+Vancouver, Canada
+Berlin, Germany
+Frankfurt, Germany
+Dusseldorf, Germany
+Munich, Germany
+Nuremberg, Germany
+Seville, Spain
+Barcelona, Spain
+Madrid, Spain
+Valencia, Spain
+London, United Kingdom
+Birmingham, United Kingdom
+Bristol, United Kingdom
+Manchester, United Kingdom
+Newcastle, United Kingdom
+Paris, France
+Calvi, France
+Lourdes, France
+Bordeaux, France
+Nice, France
+Moscow, Russia
+St. Petersburg, Russia
+Tokyo, Japan
+Sydney, Australia
