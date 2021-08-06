@@ -309,6 +309,12 @@ namespace MyVacation
             this.label9.Size = new System.Drawing.Size(37, 13);
             this.label9.TabIndex = 3;
             this.label9.Text = "Select";
+            //
+            //SeePrices
+            //
+            SeePrices.Text = "See Prices";
+            SeePrices.Font = new System.Drawing.Font("Arial", 10, System.Drawing.FontStyle.Regular);
+            SeePrices.AutoSize = true;
             // 
             // MainForm
             // 
