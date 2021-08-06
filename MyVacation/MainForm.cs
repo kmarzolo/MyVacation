@@ -19,12 +19,13 @@ namespace MyVacation
         LoginEntry entry;
         Flight flight;
         LinkedListNode<Flight> flightnode;
-        bool loginFound;
+        bool loginFound = false;
 
         public MainForm()
         {//startup form, first page user sees
             InitializeComponent();
-
+            FlightTable.Hide();
+            SignOutButton.Hide();
             //collect list of all flights
             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\kmarz\source\repos\MyVacation\MyVacation\Flight Log.txt");
             foreach (string line in lines)
@@ -45,8 +46,20 @@ namespace MyVacation
         {
             LoginForm loginform = new LoginForm(ref logins);
             loginform.ShowDialog();
-            entry = loginform.returnLogin;
+            loginFound = loginform.GetLoginStatus();
+            if(loginFound)
+            {
+                SignOutButton.Hide();
+                SignUpButton.Show();
+            }
+            else if(loginFound)
+            {
+                entry = loginform.GetLogin();
+                SignUpButton.Hide();
+                SignOutButton.Show();
+            }
             Welcome.Text = "Welcome " + entry.firstName;
+            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -56,6 +69,7 @@ namespace MyVacation
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
+            FlightTable.Show();
             while (FlightTable.RowCount > 1)
             {
                 int row = FlightTable.RowCount - 1;
@@ -126,6 +140,15 @@ namespace MyVacation
             string strg = (sender as Button).Name;
             FlightForm flightform = new FlightForm(strg);
             flightform.ShowDialog();
+        }
+
+        private void SignOutButton_Click(object sender, EventArgs e)
+        {
+            loginFound = false;
+            entry = new LoginEntry();
+            Welcome.Text = "Welcome";
+            SignOutButton.Hide();
+            SignUpButton.Show();
         }
     }
 }

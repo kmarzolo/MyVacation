@@ -48,6 +48,7 @@ namespace MyVacation
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.SignOutButton = new System.Windows.Forms.Button();
             this.FlightTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,9 +67,9 @@ namespace MyVacation
             this.LoginButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LoginButton.AutoSize = true;
             this.LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginButton.Location = new System.Drawing.Point(667, 12);
+            this.LoginButton.Location = new System.Drawing.Point(660, 12);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(75, 35);
+            this.LoginButton.Size = new System.Drawing.Size(82, 35);
             this.LoginButton.TabIndex = 3;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
@@ -79,9 +80,9 @@ namespace MyVacation
             this.SignUpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SignUpButton.AutoSize = true;
             this.SignUpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignUpButton.Location = new System.Drawing.Point(667, 56);
+            this.SignUpButton.Location = new System.Drawing.Point(660, 56);
             this.SignUpButton.Name = "SignUpButton";
-            this.SignUpButton.Size = new System.Drawing.Size(76, 35);
+            this.SignUpButton.Size = new System.Drawing.Size(83, 35);
             this.SignUpButton.TabIndex = 4;
             this.SignUpButton.Text = "Sign Up";
             this.SignUpButton.UseVisualStyleBackColor = true;
@@ -203,7 +204,7 @@ namespace MyVacation
             this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
+            this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152F));
             this.FlightTable.Controls.Add(this.label2, 0, 0);
             this.FlightTable.Controls.Add(this.label3, 1, 0);
             this.FlightTable.Controls.Add(this.label4, 2, 0);
@@ -211,14 +212,15 @@ namespace MyVacation
             this.FlightTable.Location = new System.Drawing.Point(89, 340);
             this.FlightTable.Name = "FlightTable";
             this.FlightTable.RowCount = 1;
-            this.FlightTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.FlightTable.Size = new System.Drawing.Size(606, 53);
+            this.FlightTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.FlightTable.Size = new System.Drawing.Size(607, 34);
             this.FlightTable.TabIndex = 15;
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 1);
+            this.label2.Location = new System.Drawing.Point(60, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 0;
@@ -226,8 +228,9 @@ namespace MyVacation
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(155, 1);
+            this.label3.Location = new System.Drawing.Point(194, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 1;
@@ -235,8 +238,9 @@ namespace MyVacation
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(306, 1);
+            this.label4.Location = new System.Drawing.Point(345, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 2;
@@ -244,12 +248,24 @@ namespace MyVacation
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(457, 1);
+            this.label9.Location = new System.Drawing.Point(511, 20);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 13);
             this.label9.TabIndex = 3;
             this.label9.Text = "Select";
+            // 
+            // SignOutButton
+            // 
+            this.SignOutButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignOutButton.Location = new System.Drawing.Point(660, 56);
+            this.SignOutButton.Name = "SignOutButton";
+            this.SignOutButton.Size = new System.Drawing.Size(82, 35);
+            this.SignOutButton.TabIndex = 16;
+            this.SignOutButton.Text = "Sign Out";
+            this.SignOutButton.UseVisualStyleBackColor = true;
+            this.SignOutButton.Click += new System.EventHandler(this.SignOutButton_Click);
             // 
             // MainForm
             // 
@@ -270,9 +286,10 @@ namespace MyVacation
             this.Controls.Add(this.ReturnBox);
             this.Controls.Add(this.DepartBox);
             this.Controls.Add(this.StartLocationBox);
-            this.Controls.Add(this.SignUpButton);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.SignOutButton);
+            this.Controls.Add(this.SignUpButton);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 100);
             this.Text = "MainForm";
@@ -305,6 +322,7 @@ namespace MyVacation
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button SignOutButton;
     }
 }
 

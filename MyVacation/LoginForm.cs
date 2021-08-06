@@ -31,6 +31,16 @@ namespace MyVacation
             Message.Hide();
         }
 
+        public bool GetLoginStatus()
+        {
+            return loginFound;
+        }
+
+        public LoginEntry GetLogin()
+        {
+            return login;
+        }
+
         private void LoginButton_Click(object sender, EventArgs e)
         {
             //user enters login information
@@ -57,6 +67,7 @@ namespace MyVacation
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            
             if(loginFound == false)
             {
                 returnLogin = new LoginEntry();

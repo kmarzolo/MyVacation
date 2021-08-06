@@ -12,7 +12,7 @@ namespace MyVacation
 {
     public partial class FlightForm : Form
     {
-        PurchaseForm purchaseform = new PurchaseForm();
+        string location;
         public FlightForm()
         {
             InitializeComponent();
@@ -24,7 +24,8 @@ namespace MyVacation
 
             InitializeComponent();
             FlightLabel.Text = FlightLabelText;
-            
+            location = FlightLabelText;
+
             int price = randomNumber.Next(500, 2000);
             DeltaPrice.Text = price.ToString();
             price = randomNumber.Next(500, 2000);
@@ -43,36 +44,42 @@ namespace MyVacation
         private void DeltaBuy_Click(object sender, EventArgs e)
         {
             this.Hide();
+            PurchaseForm purchaseform = new PurchaseForm(location);
             purchaseform.ShowDialog();
         }
 
         private void SpiritBuy_Click(object sender, EventArgs e)
         {
             this.Hide();
+            PurchaseForm purchaseform = new PurchaseForm(location);
             purchaseform.ShowDialog();
         }
 
         private void UABuy_Click(object sender, EventArgs e)
         {
             this.Hide();
+            PurchaseForm purchaseform = new PurchaseForm(location);
             purchaseform.ShowDialog();
         }
 
         private void SWBuy_Click(object sender, EventArgs e)
         {
             this.Hide();
+            PurchaseForm purchaseform = new PurchaseForm(location);
             purchaseform.ShowDialog();
         }
 
         private void JetBlueBuy_Click(object sender, EventArgs e)
         {
             this.Hide();
+            PurchaseForm purchaseform = new PurchaseForm(location);
             purchaseform.ShowDialog();
         }
 
         private void AABuy_Click(object sender, EventArgs e)
         {
             this.Hide();
+            PurchaseForm purchaseform = new PurchaseForm(location);
             purchaseform.ShowDialog();
         }
         

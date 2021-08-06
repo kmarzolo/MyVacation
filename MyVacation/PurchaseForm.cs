@@ -12,6 +12,7 @@ namespace MyVacation
 {
     public partial class PurchaseForm : Form
     {
+        LoginForm loginform = new LoginForm();
         public PurchaseForm()
         {
             InitializeComponent();
@@ -19,11 +20,19 @@ namespace MyVacation
 
         public PurchaseForm(string location)
         {
-            LocationLabel.Text = location;
+            InitializeComponent();
+
+            if (loginform.returnLogin.Equals(null))
+            {
+                UserLabel.Text = "User: " + loginform.returnLogin.firstName;
+            }
+            
+            LocationLabel.Text = "To: " + location;
         }
 
         public PurchaseForm(string user, string location)
         {
+            InitializeComponent();
             UserLabel.Text = "User: " + user;
             LocationLabel.Text = "To: " + location;
         }
@@ -55,5 +64,10 @@ namespace MyVacation
             return true;
         }
 
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            loginform.ShowDialog();
+            UserLabel.Text = "User: " + loginform.returnLogin.firstName;
+        }
     }
 }
