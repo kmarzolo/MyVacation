@@ -45,6 +45,8 @@ namespace MyVacation
         {
             LoginForm loginform = new LoginForm(ref logins);
             loginform.ShowDialog();
+            entry = loginform.returnLogin;
+            Welcome.Text = "Welcome " + entry.firstName;
         }
 
         private void MainForm_Load(object sender, EventArgs e)

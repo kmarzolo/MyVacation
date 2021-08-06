@@ -15,8 +15,9 @@ namespace MyVacation
         //declared variables
         bool loginFound = false;
         ListOps listoperations = new ListOps();
-        LoginEntry login;
         LinkedList<LoginEntry> logins = new LinkedList<LoginEntry>();
+        LoginEntry login;
+        public LoginEntry returnLogin;
 
         public LoginForm()
         {
@@ -44,7 +45,7 @@ namespace MyVacation
             Message.Show();
             if (loginFound)
             {
-                Message.Text = "Login Successful";
+                Message.Text = "Login Successful, press \"Cancel\"";
             }
             //if not found, revert back to original
             if (!loginFound)
@@ -56,6 +57,14 @@ namespace MyVacation
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            if(loginFound == false)
+            {
+                returnLogin = new LoginEntry();
+            }
+            if(loginFound == true)
+            {
+                returnLogin = login;
+            }
             this.Close();
         }
 

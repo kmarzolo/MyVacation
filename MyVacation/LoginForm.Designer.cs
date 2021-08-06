@@ -65,32 +65,34 @@ namespace MyVacation
             this.UsernameBox.Location = new System.Drawing.Point(175, 70);
             this.UsernameBox.Name = "UsernameBox";
             this.UsernameBox.Size = new System.Drawing.Size(156, 26);
-            this.UsernameBox.TabIndex = 2;
+            this.UsernameBox.TabIndex = 0;
             // 
             // PasswordBox
             // 
             this.PasswordBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PasswordBox.Location = new System.Drawing.Point(175, 102);
             this.PasswordBox.Name = "PasswordBox";
+            this.PasswordBox.PasswordChar = '*';
             this.PasswordBox.Size = new System.Drawing.Size(156, 26);
-            this.PasswordBox.TabIndex = 3;
+            this.PasswordBox.TabIndex = 1;
             // 
             // LoginButton
             // 
             this.LoginButton.Location = new System.Drawing.Point(86, 148);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 23);
-            this.LoginButton.TabIndex = 4;
+            this.LoginButton.TabIndex = 2;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // CancelButton
             // 
+            this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelButton.Location = new System.Drawing.Point(256, 148);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelButton.TabIndex = 5;
+            this.CancelButton.TabIndex = 4;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
@@ -100,19 +102,19 @@ namespace MyVacation
             this.SignUpButton.Location = new System.Drawing.Point(171, 148);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(75, 23);
-            this.SignUpButton.TabIndex = 6;
+            this.SignUpButton.TabIndex = 3;
             this.SignUpButton.Text = "Sign Up";
             this.SignUpButton.UseVisualStyleBackColor = true;
             this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
             // 
             // Message
             // 
-            this.Message.AutoSize = true;
-            this.Message.Location = new System.Drawing.Point(184, 193);
+            this.Message.Location = new System.Drawing.Point(1, 191);
             this.Message.Name = "Message";
-            this.Message.Size = new System.Drawing.Size(50, 13);
+            this.Message.Size = new System.Drawing.Size(417, 23);
             this.Message.TabIndex = 7;
             this.Message.Text = "Message";
+            this.Message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoginForm
             // 
