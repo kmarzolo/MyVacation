@@ -68,14 +68,6 @@ namespace MyVacation
         private void CancelButton_Click(object sender, EventArgs e)
         {
             
-            if(loginFound == false)
-            {
-                returnLogin = new LoginEntry();
-            }
-            if(loginFound == true)
-            {
-                returnLogin = login;
-            }
             this.Close();
         }
 

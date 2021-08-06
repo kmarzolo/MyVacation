@@ -46,19 +46,25 @@ namespace MyVacation
         {
             LoginForm loginform = new LoginForm(ref logins);
             loginform.ShowDialog();
+
+            //check if user logged in
             loginFound = loginform.GetLoginStatus();
-            if(loginFound)
+
+            //show sign up button if logged in
+            if(!loginFound)
             {
                 SignOutButton.Hide();
                 SignUpButton.Show();
+                Welcome.Text = "Welcome";
             }
+            //show sign out button if logged in
             else if(loginFound)
             {
                 entry = loginform.GetLogin();
                 SignUpButton.Hide();
                 SignOutButton.Show();
+                Welcome.Text = "Welcome " + entry.firstName;
             }
-            Welcome.Text = "Welcome " + entry.firstName;
             
         }
 
@@ -68,8 +74,12 @@ namespace MyVacation
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
-        {
+        {//search flights
+            
+            //show flight table
             FlightTable.Show();
+
+            //remove all rows if new search criteria
             while (FlightTable.RowCount > 1)
             {
                 int row = FlightTable.RowCount - 1;
@@ -82,6 +92,8 @@ namespace MyVacation
                 FlightTable.RowStyles.RemoveAt(row);
                 FlightTable.RowCount--;
             }
+
+            //show available flights
             SetUpFlightTable();
         }
 
