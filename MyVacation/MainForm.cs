@@ -126,7 +126,6 @@ namespace MyVacation
                 }
 
                 FlightTable.RowStyles.RemoveAt(row);
-
                 FlightTable.RowCount--;
             }
             SetUpFlightTable();
@@ -159,15 +158,16 @@ namespace MyVacation
                     city.TextAlign = ContentAlignment.MiddleCenter;
                     city.Font = new Font("Arial", 12, FontStyle.Regular);
 
-                    
+
                     //create button for purchasing flight
                     Button select = new Button();
                     select.Text = "See Prices";
+                    select.Anchor = AnchorStyles.None;
                     select.Font = new System.Drawing.Font("Arial", 10, System.Drawing.FontStyle.Regular);
                     select.AutoSize = true;
                     select.Name = city.Text;
                     select.Click += new EventHandler(SeePrices_Click);
-                    
+
                     //Add row including available flight and select button
                     FlightTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
                     FlightTable.Controls.Add(city, 0, FlightTable.RowCount);
@@ -183,17 +183,9 @@ namespace MyVacation
 
         private void SeePrices_Click(object sender, EventArgs e)
         {
-
-            /*
-            Control temp;
-            int i = FlightTable.GetRow(SeePrices);
-
-            temp = FlightTable.GetControlFromPosition(0,i);
-            */
             string strg = (sender as Button).Name;
             FlightForm flightform = new FlightForm(strg);
             flightform.ShowDialog();
-            
         }
     }
 }

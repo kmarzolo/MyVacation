@@ -1,4 +1,4 @@
-﻿Atlanta, GA, United States
+Atlanta, GA, United States
 Orlando, FL, United States
 Fort Meyers, FL, United States
 Denver, CO, United States
@@ -52,3 +52,4 @@ Moscow, Russia
 St. Petersburg, Russia
 Tokyo, Japan
 Sydney, Australia
+end of file

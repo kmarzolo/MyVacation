@@ -53,7 +53,6 @@ namespace MyVacation
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.SeePrices = new System.Windows.Forms.Button();
             this.FlightTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -309,12 +308,6 @@ namespace MyVacation
             this.label9.Size = new System.Drawing.Size(37, 13);
             this.label9.TabIndex = 3;
             this.label9.Text = "Select";
-            //
-            //SeePrices
-            //
-            SeePrices.Text = "See Prices";
-            SeePrices.Font = new System.Drawing.Font("Arial", 10, System.Drawing.FontStyle.Regular);
-            SeePrices.AutoSize = true;
             // 
             // MainForm
             // 
@@ -356,7 +349,6 @@ namespace MyVacation
 
         #endregion
 
-        private System.Windows.Forms.Button SeePrices;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Button SignUpButton;
