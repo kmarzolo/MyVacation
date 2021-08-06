@@ -18,14 +18,19 @@ namespace MyVacation
             InitializeComponent();
         }
 
-        public FlightForm(string FlightLabelText)
+        public FlightForm(LoginEntry login, string FlightLabelText)
         {
-            Random randomNumber = new Random();
-
+            Random randomNumber = new Random(); //used to set prices
             InitializeComponent();
+
+            //set user label
+            LoginUserLabel.Text = login.firstName;
+
+            //set location label
             FlightLabel.Text = FlightLabelText;
             location = FlightLabelText;
 
+            //set prices
             int price = randomNumber.Next(500, 2000);
             DeltaPrice.Text = price.ToString();
             price = randomNumber.Next(500, 2000);

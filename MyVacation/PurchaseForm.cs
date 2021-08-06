@@ -11,20 +11,22 @@ using System.Windows.Forms;
 namespace MyVacation
 {
     public partial class PurchaseForm : Form
-    {
-        LoginForm loginform = new LoginForm();
+    { 
+        bool loginFound = true;
         public PurchaseForm()
         {
             InitializeComponent();
         }
 
-        public PurchaseForm(string location)
+        public PurchaseForm(LoginEntry login, string location)
         {
             InitializeComponent();
 
-            if (loginform.returnLogin.Equals(null))
+            //grab login information
+            if (loginFound)
             {
-                UserLabel.Text = "User: " + loginform.returnLogin.firstName;
+                UserLabel.Text = login.firstName;
+                UserLabel.Text = "User: " + login.firstName;
             }
             
             LocationLabel.Text = "To: " + location;

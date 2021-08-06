@@ -16,7 +16,7 @@ namespace MyVacation
         LinkedList<LoginEntry> logins = new LinkedList<LoginEntry>(); //to hold all accounts
         LinkedList<Flight> flights = new LinkedList<Flight>(); //to hold all flights
         ListOps listoperations = new ListOps(); //methods for updating lists
-        LoginEntry entry;
+        LoginEntry login;
         Flight flight;
         LinkedListNode<Flight> flightnode;
         bool loginFound = false;
@@ -26,6 +26,7 @@ namespace MyVacation
             InitializeComponent();
             FlightTable.Hide();
             SignOutButton.Hide();
+
             //collect list of all flights
             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\kmarz\source\repos\MyVacation\MyVacation\Flight Log.txt");
             foreach (string line in lines)
@@ -60,12 +61,11 @@ namespace MyVacation
             //show sign out button if logged in
             else if(loginFound)
             {
-                entry = loginform.GetLogin();
+                login = loginform.GetLogin();
                 SignUpButton.Hide();
                 SignOutButton.Show();
-                Welcome.Text = "Welcome " + entry.firstName;
+                Welcome.Text = "Welcome " + login.firstName;
             }
-            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -150,14 +150,14 @@ namespace MyVacation
         private void SeePrices_Click(object sender, EventArgs e)
         {
             string strg = (sender as Button).Name;
-            FlightForm flightform = new FlightForm(strg);
+            FlightForm flightform = new FlightForm(login, strg);
             flightform.ShowDialog();
         }
 
         private void SignOutButton_Click(object sender, EventArgs e)
         {
             loginFound = false;
-            entry = new LoginEntry();
+            login = new LoginEntry();
             Welcome.Text = "Welcome";
             SignOutButton.Hide();
             SignUpButton.Show();
