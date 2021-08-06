@@ -19,22 +19,11 @@ namespace MyVacation
         LoginEntry entry;
         Flight flight;
         LinkedListNode<Flight> flightnode;
-        Point startpoint;
         bool loginFound;
 
         public MainForm()
         {//startup form, first page user sees
             InitializeComponent();
-
-            //hide login fields, click login button will reveal them
-            CancelButton.Hide();
-            UsernameBox.Hide();
-            UsernameLabel.Hide();
-            PasswordBox.Hide();
-            PasswordLabel.Hide();
-
-            //save location of login button
-            startpoint = LoginButton.Location;
 
             //collect list of all flights
             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\kmarz\source\repos\MyVacation\MyVacation\Flight Log.txt");
@@ -54,59 +43,8 @@ namespace MyVacation
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            loginFound = false;
-            //if login button hasn't been clicked yet
-            //click to reveal login fields
-            if (LoginButton.Location == startpoint)
-            {
-
-                LoginButton.Location = new Point(589, 78);
-                CancelButton.Show();
-                UsernameBox.Show();
-                UsernameLabel.Show();
-                PasswordBox.Show();
-                PasswordLabel.Show();
-                SignUpButton.Hide();
-                Message.Hide();
-            }
-            //user enters login information
-            //search for their account
-            else
-            {
-                entry.username = UsernameBox.Text;
-                entry.password = PasswordBox.Text;
-
-                //search for account
-                loginFound = listoperations.Verify(ref entry, ref logins);
-
-                //if found, let user know and welcome them top left corner of screen
-                Message.Show();
-                if (loginFound)
-                {
-                    Message.Text = "Login Successful";
-                    Welcome.Text = "Welcome, " + entry.firstName;
-                }
-                //if not found, revert back to original;
-                if (!loginFound)
-                {
-                    Message.Text = "Login Failed";
-                    Welcome.Text = "Welcome";
-                    return;
-                }
-            }
-        }
-
-        private void CancelButton_Click(object sender, EventArgs e)
-        {
-            //if cancel button is clicked, hide login fields
-            CancelButton.Hide();
-            UsernameBox.Hide();
-            UsernameLabel.Hide();
-            PasswordBox.Hide();
-            PasswordLabel.Hide();
-            SignUpButton.Show();
-            Message.Hide();
-            LoginButton.Location = startpoint;
+            LoginForm loginform = new LoginForm(ref logins);
+            loginform.ShowDialog();
         }
 
         private void MainForm_Load(object sender, EventArgs e)

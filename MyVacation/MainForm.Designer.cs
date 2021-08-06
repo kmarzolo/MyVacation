@@ -32,11 +32,6 @@ namespace MyVacation
             this.label1 = new System.Windows.Forms.Label();
             this.LoginButton = new System.Windows.Forms.Button();
             this.SignUpButton = new System.Windows.Forms.Button();
-            this.UsernameBox = new System.Windows.Forms.TextBox();
-            this.PasswordBox = new System.Windows.Forms.TextBox();
-            this.CancelButton = new System.Windows.Forms.Button();
-            this.UsernameLabel = new System.Windows.Forms.Label();
-            this.PasswordLabel = new System.Windows.Forms.Label();
             this.StartLocationBox = new System.Windows.Forms.TextBox();
             this.DepartBox = new System.Windows.Forms.TextBox();
             this.ReturnBox = new System.Windows.Forms.TextBox();
@@ -91,59 +86,6 @@ namespace MyVacation
             this.SignUpButton.Text = "Sign Up";
             this.SignUpButton.UseVisualStyleBackColor = true;
             this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
-            // 
-            // UsernameBox
-            // 
-            this.UsernameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UsernameBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameBox.Location = new System.Drawing.Point(589, 12);
-            this.UsernameBox.Name = "UsernameBox";
-            this.UsernameBox.Size = new System.Drawing.Size(154, 26);
-            this.UsernameBox.TabIndex = 0;
-            // 
-            // PasswordBox
-            // 
-            this.PasswordBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PasswordBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordBox.Location = new System.Drawing.Point(589, 44);
-            this.PasswordBox.Name = "PasswordBox";
-            this.PasswordBox.PasswordChar = '*';
-            this.PasswordBox.Size = new System.Drawing.Size(154, 26);
-            this.PasswordBox.TabIndex = 1;
-            // 
-            // CancelButton
-            // 
-            this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelButton.Location = new System.Drawing.Point(668, 78);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(75, 35);
-            this.CancelButton.TabIndex = 5;
-            this.CancelButton.Text = "Cancel";
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
-            // UsernameLabel
-            // 
-            this.UsernameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameLabel.Location = new System.Drawing.Point(495, 15);
-            this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(87, 19);
-            this.UsernameLabel.TabIndex = 6;
-            this.UsernameLabel.Text = "Username";
-            // 
-            // PasswordLabel
-            // 
-            this.PasswordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordLabel.Location = new System.Drawing.Point(495, 47);
-            this.PasswordLabel.Name = "PasswordLabel";
-            this.PasswordLabel.Size = new System.Drawing.Size(86, 19);
-            this.PasswordLabel.TabIndex = 7;
-            this.PasswordLabel.Text = "Password";
             // 
             // StartLocationBox
             // 
@@ -261,7 +203,7 @@ namespace MyVacation
             this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
             this.FlightTable.Controls.Add(this.label2, 0, 0);
             this.FlightTable.Controls.Add(this.label3, 1, 0);
             this.FlightTable.Controls.Add(this.label4, 2, 0);
@@ -269,8 +211,8 @@ namespace MyVacation
             this.FlightTable.Location = new System.Drawing.Point(89, 340);
             this.FlightTable.Name = "FlightTable";
             this.FlightTable.RowCount = 1;
-            this.FlightTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.FlightTable.Size = new System.Drawing.Size(605, 52);
+            this.FlightTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.FlightTable.Size = new System.Drawing.Size(606, 53);
             this.FlightTable.TabIndex = 15;
             // 
             // label2
@@ -328,11 +270,6 @@ namespace MyVacation
             this.Controls.Add(this.ReturnBox);
             this.Controls.Add(this.DepartBox);
             this.Controls.Add(this.StartLocationBox);
-            this.Controls.Add(this.PasswordLabel);
-            this.Controls.Add(this.UsernameLabel);
-            this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.PasswordBox);
-            this.Controls.Add(this.UsernameBox);
             this.Controls.Add(this.SignUpButton);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.label1);
@@ -352,11 +289,6 @@ namespace MyVacation
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Button SignUpButton;
-        private System.Windows.Forms.TextBox UsernameBox;
-        private System.Windows.Forms.TextBox PasswordBox;
-        private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.Label UsernameLabel;
-        private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.TextBox StartLocationBox;
         private System.Windows.Forms.TextBox DepartBox;
         private System.Windows.Forms.TextBox ReturnBox;

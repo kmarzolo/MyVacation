@@ -40,6 +40,7 @@ namespace MyVacation
             this.CancelButton = new System.Windows.Forms.Button();
             this.LoginButton = new System.Windows.Forms.Button();
             this.SignUpButton = new System.Windows.Forms.Button();
+            this.LocationLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UserLabel
@@ -148,11 +149,22 @@ namespace MyVacation
             this.SignUpButton.Text = "Sign Up";
             this.SignUpButton.UseVisualStyleBackColor = true;
             // 
+            // LocationLabel
+            // 
+            this.LocationLabel.AutoSize = true;
+            this.LocationLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocationLabel.Location = new System.Drawing.Point(0, 19);
+            this.LocationLabel.Name = "LocationLabel";
+            this.LocationLabel.Size = new System.Drawing.Size(105, 19);
+            this.LocationLabel.TabIndex = 9;
+            this.LocationLabel.Text = "To: Location";
+            // 
             // PurchaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 305);
+            this.Controls.Add(this.LocationLabel);
             this.Controls.Add(this.SignUpButton);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.CancelButton);
@@ -184,5 +196,6 @@ namespace MyVacation
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Button SignUpButton;
+        private System.Windows.Forms.Label LocationLabel;
     }
 }
