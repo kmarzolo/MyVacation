@@ -12,53 +12,26 @@ namespace MyVacation
 {
     public partial class LoginForm : Form
     {
-        //declared variables
-        bool loginFound = false;
-        ListOps listoperations = new ListOps();
-        LinkedList<LoginEntry> logins = new LinkedList<LoginEntry>();
-        LoginEntry login;
-        public LoginEntry returnLogin;
-
         public LoginForm()
         {
             InitializeComponent();
             Message.Hide();
-        }
-        public LoginForm(ref LinkedList<LoginEntry> log)
-        {
-            InitializeComponent();
-            logins = log;
-            Message.Hide();
-        }
-
-        public bool GetLoginStatus()
-        {
-            return loginFound;
-        }
-
-        public LoginEntry GetLogin()
-        {
-            return login;
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
             //user enters login information
             //search for their account
-            login.username = UsernameBox.Text;
-            login.password = PasswordBox.Text;
-
-            //search for account
-            loginFound = listoperations.Verify(ref login, ref logins);
+            Variables.logins.VerifyAccount(UsernameBox.Text, PasswordBox.Text);
 
             //if found, let user know
             Message.Show();
-            if (loginFound)
+            if (Variables.logins.GetLoginStatus())
             {
                 Message.Text = "Login Successful, press \"Cancel\"";
             }
             //if not found, revert back to original
-            if (!loginFound)
+            if (!Variables.logins.GetLoginStatus())
             {
                 Message.Text = "Login Failed";
                 return;
@@ -72,7 +45,7 @@ namespace MyVacation
 
         private void SignUpButton_Click(object sender, EventArgs e)
         {
-            SignUpForm signupform = new SignUpForm(ref logins);
+            SignUpForm signupform = new SignUpForm();
             signupform.ShowDialog();
         }
     }

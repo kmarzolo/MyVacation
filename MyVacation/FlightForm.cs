@@ -18,17 +18,20 @@ namespace MyVacation
             InitializeComponent();
         }
 
-        public FlightForm(LoginEntry login, string FlightLabelText)
+        public FlightForm(string FlightLabelText)
         {
             Random randomNumber = new Random(); //used to set prices
             InitializeComponent();
-
+            
             //set user label
-            LoginUserLabel.Text = login.firstName;
+            if(Variables.logins.GetLoginStatus())
+            {
+                LoginUserLabel.Text = "User: " + Variables.logins.GetLoginAccount().firstName;
+            }
 
             //set location label
-            FlightLabel.Text = FlightLabelText;
             location = FlightLabelText;
+            FlightLabel.Text = location;
 
             //set prices
             int price = randomNumber.Next(500, 2000);
@@ -49,42 +52,48 @@ namespace MyVacation
         private void DeltaBuy_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PurchaseForm purchaseform = new PurchaseForm(location);
+            PurchaseForm purchaseform = 
+                new PurchaseForm(Variables.logins.GetLoginAccount(), location);
             purchaseform.ShowDialog();
         }
 
         private void SpiritBuy_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PurchaseForm purchaseform = new PurchaseForm(location);
+            PurchaseForm purchaseform =
+                new PurchaseForm(Variables.logins.GetLoginAccount(), location);
             purchaseform.ShowDialog();
         }
 
         private void UABuy_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PurchaseForm purchaseform = new PurchaseForm(location);
+            PurchaseForm purchaseform =
+                new PurchaseForm(Variables.logins.GetLoginAccount(), location);
             purchaseform.ShowDialog();
         }
 
         private void SWBuy_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PurchaseForm purchaseform = new PurchaseForm(location);
+            PurchaseForm purchaseform =
+                new PurchaseForm(Variables.logins.GetLoginAccount(), location);
             purchaseform.ShowDialog();
         }
 
         private void JetBlueBuy_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PurchaseForm purchaseform = new PurchaseForm(location);
+            PurchaseForm purchaseform =
+                new PurchaseForm(Variables.logins.GetLoginAccount(), location);
             purchaseform.ShowDialog();
         }
 
         private void AABuy_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PurchaseForm purchaseform = new PurchaseForm(location);
+            PurchaseForm purchaseform =
+                new PurchaseForm(Variables.logins.GetLoginAccount(), location);
             purchaseform.ShowDialog();
         }
         

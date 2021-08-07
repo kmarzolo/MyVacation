@@ -11,22 +11,21 @@ using System.Windows.Forms;
 namespace MyVacation
 {
     public partial class PurchaseForm : Form
-    { 
-        bool loginFound = true;
+    {
+        LoginForm loginform = new LoginForm();
         public PurchaseForm()
         {
             InitializeComponent();
         }
 
-        public PurchaseForm(LoginEntry login, string location)
+        public PurchaseForm(LoginEntry log, string location)
         {
             InitializeComponent();
 
             //grab login information
-            if (loginFound)
+            if (Variables.logins.GetLoginStatus())
             {
-                UserLabel.Text = login.firstName;
-                UserLabel.Text = "User: " + login.firstName;
+                UserLabel.Text = "User: " + Variables.logins.GetLoginAccount().firstName;
             }
             
             LocationLabel.Text = "To: " + location;
@@ -69,7 +68,7 @@ namespace MyVacation
         private void LoginButton_Click(object sender, EventArgs e)
         {
             loginform.ShowDialog();
-            UserLabel.Text = "User: " + loginform.returnLogin.firstName;
+            UserLabel.Text = Variables.logins.GetLoginAccount().firstName;
         }
     }
 }

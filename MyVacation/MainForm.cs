@@ -13,13 +13,9 @@ namespace MyVacation
 {
     public partial class MainForm : Form
     {
-        LinkedList<LoginEntry> logins = new LinkedList<LoginEntry>(); //to hold all accounts
         LinkedList<Flight> flights = new LinkedList<Flight>(); //to hold all flights
-        ListOps listoperations = new ListOps(); //methods for updating lists
-        LoginEntry login;
         Flight flight;
         LinkedListNode<Flight> flightnode;
-        bool loginFound = false;
 
         public MainForm()
         {//startup form, first page user sees
@@ -39,32 +35,28 @@ namespace MyVacation
         private void SignUpButton_Click(object sender, EventArgs e)
         {
             //go to sign up page, users can register accounts
-            SignUpForm signupform = new SignUpForm(ref logins);
+            SignUpForm signupform = new SignUpForm();
             signupform.ShowDialog();
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            LoginForm loginform = new LoginForm(ref logins);
+            LoginForm loginform = new LoginForm();
             loginform.ShowDialog();
 
-            //check if user logged in
-            loginFound = loginform.GetLoginStatus();
-
             //show sign up button if logged in
-            if(!loginFound)
+            if(!(Variables.logins.GetLoginStatus()))
             {
                 SignOutButton.Hide();
                 SignUpButton.Show();
                 Welcome.Text = "Welcome";
             }
             //show sign out button if logged in
-            else if(loginFound)
+            else if(Variables.logins.GetLoginStatus())
             {
-                login = loginform.GetLogin();
                 SignUpButton.Hide();
                 SignOutButton.Show();
-                Welcome.Text = "Welcome " + login.firstName;
+                Welcome.Text = "Welcome " + Variables.logins.GetLoginAccount().firstName;
             }
         }
 
@@ -150,14 +142,17 @@ namespace MyVacation
         private void SeePrices_Click(object sender, EventArgs e)
         {
             string strg = (sender as Button).Name;
-            FlightForm flightform = new FlightForm(login, strg);
+            FlightForm flightform = new FlightForm(strg);
             flightform.ShowDialog();
         }
 
         private void SignOutButton_Click(object sender, EventArgs e)
         {
-            loginFound = false;
-            login = new LoginEntry();
+            Variables.logins.SetLoginStatus(false);
+            Variables.logins.SetLoginAccount(new LoginEntry());
+            //loginFound = false;
+            //login = new LoginEntry();
+            
             Welcome.Text = "Welcome";
             SignOutButton.Hide();
             SignUpButton.Show();

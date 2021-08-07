@@ -12,20 +12,11 @@ namespace MyVacation
 {
     public partial class SignUpForm : Form
     {
-        LinkedList<LoginEntry> temp = new LinkedList<LoginEntry>();
-        ListOps listoperations = new ListOps();
-        LoginEntry entry;
+        LoginEntry login;
 
         public SignUpForm()
         {
             InitializeComponent();
-        }
-
-        public SignUpForm(ref LinkedList<LoginEntry> logins)
-        {
-            //share linked list
-            InitializeComponent();
-            temp = logins;
         }
 
         private void Close_Click(object sender, EventArgs e)
@@ -74,20 +65,20 @@ namespace MyVacation
             Message.Text = " ";
 
             //user enters information
-            entry.firstName = FirstNameBox.Text;
-            entry.lastName = LastNameBox.Text;
-            entry.username = UsernameBox.Text;
-            entry.password = PasswordBox.Text;
+            login.firstName = FirstNameBox.Text;
+            login.lastName = LastNameBox.Text;
+            login.username = UsernameBox.Text;
+            login.password = PasswordBox.Text;
             
             //check if username already exists
-            if (listoperations.Search(ref entry, ref temp))
+            if (Variables.logins.SearchAccounts(login))
             {
                 Message.Text = "Username already exists";
                 return;
             }
 
             //tests passed, add user
-            temp.AddLast(entry);
+            Variables.logins.AddAccount(login);
             Message.ForeColor = Color.Black;
             Message.Text = "Sign up Successful, Press Close";
         }
