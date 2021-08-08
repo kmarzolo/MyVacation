@@ -62,19 +62,19 @@ namespace MyVacation
             // 
             this.UsernameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.UsernameBox.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameBox.Location = new System.Drawing.Point(201, 73);
+            this.UsernameBox.Location = new System.Drawing.Point(191, 73);
             this.UsernameBox.Name = "UsernameBox";
-            this.UsernameBox.Size = new System.Drawing.Size(193, 29);
+            this.UsernameBox.Size = new System.Drawing.Size(236, 29);
             this.UsernameBox.TabIndex = 2;
             // 
             // PasswordBox
             // 
             this.PasswordBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.PasswordBox.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordBox.Location = new System.Drawing.Point(201, 108);
+            this.PasswordBox.Location = new System.Drawing.Point(191, 108);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.PasswordChar = '*';
-            this.PasswordBox.Size = new System.Drawing.Size(193, 29);
+            this.PasswordBox.Size = new System.Drawing.Size(236, 29);
             this.PasswordBox.TabIndex = 3;
             // 
             // label1
@@ -125,28 +125,28 @@ namespace MyVacation
             // 
             this.LastNameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.LastNameBox.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastNameBox.Location = new System.Drawing.Point(201, 38);
+            this.LastNameBox.Location = new System.Drawing.Point(191, 38);
             this.LastNameBox.Name = "LastNameBox";
-            this.LastNameBox.Size = new System.Drawing.Size(193, 29);
+            this.LastNameBox.Size = new System.Drawing.Size(236, 29);
             this.LastNameBox.TabIndex = 1;
             // 
             // FirstNameBox
             // 
             this.FirstNameBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.FirstNameBox.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstNameBox.Location = new System.Drawing.Point(201, 3);
+            this.FirstNameBox.Location = new System.Drawing.Point(191, 3);
             this.FirstNameBox.Name = "FirstNameBox";
-            this.FirstNameBox.Size = new System.Drawing.Size(193, 29);
+            this.FirstNameBox.Size = new System.Drawing.Size(236, 29);
             this.FirstNameBox.TabIndex = 0;
             // 
             // ConfirmBox
             // 
             this.ConfirmBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ConfirmBox.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfirmBox.Location = new System.Drawing.Point(201, 143);
+            this.ConfirmBox.Location = new System.Drawing.Point(191, 143);
             this.ConfirmBox.Name = "ConfirmBox";
             this.ConfirmBox.PasswordChar = '*';
-            this.ConfirmBox.Size = new System.Drawing.Size(193, 29);
+            this.ConfirmBox.Size = new System.Drawing.Size(236, 29);
             this.ConfirmBox.TabIndex = 4;
             // 
             // label3
@@ -209,9 +209,9 @@ namespace MyVacation
             // EmailBox
             // 
             this.EmailBox.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailBox.Location = new System.Drawing.Point(201, 178);
+            this.EmailBox.Location = new System.Drawing.Point(191, 178);
             this.EmailBox.Name = "EmailBox";
-            this.EmailBox.Size = new System.Drawing.Size(193, 29);
+            this.EmailBox.Size = new System.Drawing.Size(236, 29);
             this.EmailBox.TabIndex = 5;
             // 
             // NameFields
@@ -228,9 +228,9 @@ namespace MyVacation
             this.NameFields.Controls.Add(this.label5);
             this.NameFields.Controls.Add(this.ConfirmBox);
             this.NameFields.Controls.Add(this.label6);
-            this.NameFields.Location = new System.Drawing.Point(28, 23);
+            this.NameFields.Location = new System.Drawing.Point(12, 23);
             this.NameFields.Name = "NameFields";
-            this.NameFields.Size = new System.Drawing.Size(397, 230);
+            this.NameFields.Size = new System.Drawing.Size(430, 230);
             this.NameFields.TabIndex = 12;
             // 
             // CardInformation
@@ -241,17 +241,18 @@ namespace MyVacation
             this.CardInformation.Controls.Add(this.label8);
             this.CardInformation.Controls.Add(this.label7);
             this.CardInformation.Controls.Add(this.CVVBox);
-            this.CardInformation.Location = new System.Drawing.Point(28, 23);
+            this.CardInformation.Location = new System.Drawing.Point(12, 23);
             this.CardInformation.Name = "CardInformation";
-            this.CardInformation.Size = new System.Drawing.Size(397, 116);
+            this.CardInformation.Size = new System.Drawing.Size(430, 116);
             this.CardInformation.TabIndex = 13;
             // 
             // CVVBox
             // 
             this.CVVBox.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CVVBox.Location = new System.Drawing.Point(201, 73);
+            this.CVVBox.Location = new System.Drawing.Point(191, 73);
+            this.CVVBox.MaxLength = 3;
             this.CVVBox.Name = "CVVBox";
-            this.CVVBox.Size = new System.Drawing.Size(193, 29);
+            this.CVVBox.Size = new System.Drawing.Size(236, 29);
             this.CVVBox.TabIndex = 8;
             // 
             // label7
@@ -307,20 +308,20 @@ namespace MyVacation
             // CardNumberBox
             // 
             this.CardNumberBox.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CardNumberBox.Location = new System.Drawing.Point(201, 3);
+            this.CardNumberBox.Location = new System.Drawing.Point(191, 3);
             this.CardNumberBox.Mask = "0000 0000 0000 0000";
             this.CardNumberBox.Name = "CardNumberBox";
-            this.CardNumberBox.Size = new System.Drawing.Size(193, 29);
+            this.CardNumberBox.Size = new System.Drawing.Size(236, 29);
             this.CardNumberBox.TabIndex = 15;
             this.CardNumberBox.ValidatingType = typeof(int);
             // 
             // ExpirationDateBox
             // 
             this.ExpirationDateBox.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpirationDateBox.Location = new System.Drawing.Point(201, 38);
+            this.ExpirationDateBox.Location = new System.Drawing.Point(191, 38);
             this.ExpirationDateBox.Mask = "00/00";
             this.ExpirationDateBox.Name = "ExpirationDateBox";
-            this.ExpirationDateBox.Size = new System.Drawing.Size(193, 29);
+            this.ExpirationDateBox.Size = new System.Drawing.Size(236, 29);
             this.ExpirationDateBox.TabIndex = 15;
             this.ExpirationDateBox.ValidatingType = typeof(System.DateTime);
             // 
