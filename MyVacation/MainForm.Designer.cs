@@ -33,8 +33,6 @@ namespace MyVacation
             this.LoginButton = new System.Windows.Forms.Button();
             this.SignUpButton = new System.Windows.Forms.Button();
             this.StartLocationBox = new System.Windows.Forms.TextBox();
-            this.DepartBox = new System.Windows.Forms.TextBox();
-            this.ReturnBox = new System.Windows.Forms.TextBox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.Welcome = new System.Windows.Forms.Label();
             this.Message = new System.Windows.Forms.Label();
@@ -49,6 +47,9 @@ namespace MyVacation
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.SignOutButton = new System.Windows.Forms.Button();
+            this.SearchMessage = new System.Windows.Forms.Label();
+            this.DepartBox = new System.Windows.Forms.MaskedTextBox();
+            this.ReturnBox = new System.Windows.Forms.MaskedTextBox();
             this.FlightTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,24 +97,6 @@ namespace MyVacation
             this.StartLocationBox.Name = "StartLocationBox";
             this.StartLocationBox.Size = new System.Drawing.Size(154, 26);
             this.StartLocationBox.TabIndex = 6;
-            // 
-            // DepartBox
-            // 
-            this.DepartBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DepartBox.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.DepartBox.Location = new System.Drawing.Point(389, 210);
-            this.DepartBox.Name = "DepartBox";
-            this.DepartBox.Size = new System.Drawing.Size(154, 26);
-            this.DepartBox.TabIndex = 8;
-            // 
-            // ReturnBox
-            // 
-            this.ReturnBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnBox.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.ReturnBox.Location = new System.Drawing.Point(549, 210);
-            this.ReturnBox.Name = "ReturnBox";
-            this.ReturnBox.Size = new System.Drawing.Size(154, 26);
-            this.ReturnBox.TabIndex = 9;
             // 
             // SearchButton
             // 
@@ -204,7 +187,7 @@ namespace MyVacation
             this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 152F));
+            this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 153F));
             this.FlightTable.Controls.Add(this.label2, 0, 0);
             this.FlightTable.Controls.Add(this.label3, 1, 0);
             this.FlightTable.Controls.Add(this.label4, 2, 0);
@@ -212,15 +195,15 @@ namespace MyVacation
             this.FlightTable.Location = new System.Drawing.Point(89, 340);
             this.FlightTable.Name = "FlightTable";
             this.FlightTable.RowCount = 1;
-            this.FlightTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.FlightTable.Size = new System.Drawing.Size(607, 34);
+            this.FlightTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.FlightTable.Size = new System.Drawing.Size(608, 35);
             this.FlightTable.TabIndex = 15;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 20);
+            this.label2.Location = new System.Drawing.Point(60, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 0;
@@ -230,7 +213,7 @@ namespace MyVacation
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(194, 20);
+            this.label3.Location = new System.Drawing.Point(194, 21);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 1;
@@ -240,7 +223,7 @@ namespace MyVacation
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(345, 20);
+            this.label4.Location = new System.Drawing.Point(345, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 2;
@@ -250,7 +233,7 @@ namespace MyVacation
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(511, 20);
+            this.label9.Location = new System.Drawing.Point(512, 21);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 13);
             this.label9.TabIndex = 3;
@@ -267,6 +250,36 @@ namespace MyVacation
             this.SignOutButton.UseVisualStyleBackColor = true;
             this.SignOutButton.Click += new System.EventHandler(this.SignOutButton_Click);
             // 
+            // SearchMessage
+            // 
+            this.SearchMessage.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchMessage.Location = new System.Drawing.Point(3, 254);
+            this.SearchMessage.Name = "SearchMessage";
+            this.SearchMessage.Size = new System.Drawing.Size(768, 23);
+            this.SearchMessage.TabIndex = 17;
+            this.SearchMessage.Text = "Search Message";
+            this.SearchMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // DepartBox
+            // 
+            this.DepartBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DepartBox.Location = new System.Drawing.Point(389, 210);
+            this.DepartBox.Mask = "00/00/0000";
+            this.DepartBox.Name = "DepartBox";
+            this.DepartBox.Size = new System.Drawing.Size(154, 26);
+            this.DepartBox.TabIndex = 8;
+            this.DepartBox.ValidatingType = typeof(System.DateTime);
+            // 
+            // ReturnBox
+            // 
+            this.ReturnBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnBox.Location = new System.Drawing.Point(549, 210);
+            this.ReturnBox.Mask = "00/00/0000";
+            this.ReturnBox.Name = "ReturnBox";
+            this.ReturnBox.Size = new System.Drawing.Size(154, 26);
+            this.ReturnBox.TabIndex = 9;
+            this.ReturnBox.ValidatingType = typeof(System.DateTime);
+            // 
             // MainForm
             // 
             this.AcceptButton = this.SearchButton;
@@ -274,6 +287,9 @@ namespace MyVacation
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(774, 507);
+            this.Controls.Add(this.ReturnBox);
+            this.Controls.Add(this.DepartBox);
+            this.Controls.Add(this.SearchMessage);
             this.Controls.Add(this.FlightTable);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -283,8 +299,6 @@ namespace MyVacation
             this.Controls.Add(this.Message);
             this.Controls.Add(this.Welcome);
             this.Controls.Add(this.SearchButton);
-            this.Controls.Add(this.ReturnBox);
-            this.Controls.Add(this.DepartBox);
             this.Controls.Add(this.StartLocationBox);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.label1);
@@ -307,8 +321,6 @@ namespace MyVacation
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Button SignUpButton;
         private System.Windows.Forms.TextBox StartLocationBox;
-        private System.Windows.Forms.TextBox DepartBox;
-        private System.Windows.Forms.TextBox ReturnBox;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Label Welcome;
         private System.Windows.Forms.Label Message;
@@ -323,6 +335,9 @@ namespace MyVacation
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button SignOutButton;
+        private System.Windows.Forms.Label SearchMessage;
+        private System.Windows.Forms.MaskedTextBox DepartBox;
+        private System.Windows.Forms.MaskedTextBox ReturnBox;
     }
 }
 

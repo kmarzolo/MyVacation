@@ -13,14 +13,17 @@ namespace MyVacation
 {
     public partial class MainForm : Form
     {
+        string startlocation, endlocation, departdate, returndate;
         public MainForm()
         {//startup form, first page user sees
             InitializeComponent();
             FlightTable.Hide();
             SignOutButton.Hide();
+            SearchMessage.Hide();
 
             //collect list of all flights
-            Variables.flights = System.IO.File.ReadAllLines(@"C:\Users\kmarz\source\repos\MyVacation\MyVacation\Flight Log.txt");
+            //Variables.flights = System.IO.File.ReadAllLines(@"C:\Users\kmarz\source\repos\MyVacation\MyVacation\Flight Log.txt");
+            Variables.flights.AddFlights(@"C:\Users\kmarz\source\repos\MyVacation\MyVacation\Flight Log.txt");
         }
 
         private void SignUpButton_Click(object sender, EventArgs e)
@@ -36,14 +39,14 @@ namespace MyVacation
             loginform.ShowDialog();
 
             //show sign up button if logged in
-            if(!(Variables.logins.GetLoginStatus()))
+            if (!(Variables.logins.GetLoginStatus()))
             {
                 SignOutButton.Hide();
                 SignUpButton.Show();
                 Welcome.Text = "Welcome";
             }
             //show sign out button if logged in
-            else if(Variables.logins.GetLoginStatus())
+            else if (Variables.logins.GetLoginStatus())
             {
                 SignUpButton.Hide();
                 SignOutButton.Show();
@@ -58,7 +61,6 @@ namespace MyVacation
 
         private void SearchButton_Click(object sender, EventArgs e)
         {//search flights
-            
             //show flight table
             FlightTable.Show();
 
@@ -87,20 +89,36 @@ namespace MyVacation
 
         private void SetUpFlightTable()
         {
+            SearchMessage.Hide();
             //collect search criteria
-            string location = EndLocationBox.Text;
-            string departdate = DepartBox.Text;
-            string returndate = ReturnBox.Text;
+            startlocation = StartLocationBox.Text;
+            endlocation = EndLocationBox.Text;
+            departdate = DepartBox.Text;
+            returndate = ReturnBox.Text;
 
-            //search flight list for location
-            for(int i = 0; i < Variables.flights.Length; i++)
+            //search list for startlocation
+            if(Variables.flights.FindFlights(startlocation))
             {
-                if(Variables.flights[i].Contains(location))
+                startlocation = Variables.flights.GetFlight(startlocation);
+            }
+            else
+            {
+                SearchMessage.Show();
+                SearchMessage.Text = "Start Location Not Found, Enter Another Location";
+                return;
+            }
+
+            //Search flight list for location
+            if(Variables.flights.FindFlights(endlocation))
+            {
+                string[] tempList = Variables.flights.GetAllFlights(endlocation);
+
+                for (int i = 0; i < tempList.Length; i++)
                 {
-                    //create label for displaying information;
+                    //create label for displaying information
                     Label city = new Label();
-                    city.Text = Variables.flights[i];
-                    city.Name = Variables.flights[i];
+                    city.Text = tempList[i];
+                    city.Name = tempList[i];
                     city.Dock = DockStyle.Fill;
                     city.TextAlign = ContentAlignment.MiddleCenter;
                     city.Font = new Font("Arial", 12, FontStyle.Regular);
@@ -121,12 +139,19 @@ namespace MyVacation
                     FlightTable.RowCount++;
                 }
             }
+            else
+            {
+                SearchMessage.Show();
+                SearchMessage.Text = "Start Location Not Found, Enter Another Location";
+                return;
+            }
         }
 
         private void SeePrices_Click(object sender, EventArgs e)
         {
             string strg = (sender as Button).Name;
-            FlightForm flightform = new FlightForm(strg);
+            FlightForm flightform = new
+                FlightForm(startlocation, departdate, returndate, strg);
             flightform.ShowDialog();
         }
 
@@ -134,7 +159,7 @@ namespace MyVacation
         {
             Variables.logins.SetLoginStatus(false);
             Variables.logins.SetLoginAccount(new LoginEntry());
-            
+
             Welcome.Text = "Welcome";
             SignOutButton.Hide();
             SignUpButton.Show();

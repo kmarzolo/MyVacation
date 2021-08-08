@@ -16,16 +16,6 @@ public struct LoginEntry
     public string password;
 };
 
-public struct Flight
-{
-    //used for flight information
-    public string startLocation;
-    public string endLocation;
-    public string departDate;
-    public string returnDate;
-    public int price;
-}
-
 public class LoginHandler
 {
     LinkedList<LoginEntry> logins = new LinkedList<LoginEntry>();
@@ -75,6 +65,7 @@ public class LoginHandler
         node = logins.First;
         while (!(node == null))
         {
+            //check username
             if (node.Value.username == temp.username)
             {
                 loginFound = true;
@@ -83,6 +74,8 @@ public class LoginHandler
 
             node = node.Next;
         }
+
+        //account was not found
         loginFound = false;
         return false;
     }
@@ -92,8 +85,10 @@ public class LoginHandler
         node = logins.First;
         while (!(node == null))
         {
+            //check username
             if (node.Value.username == username)
             {
+                //check password
                 if (node.Value.password == password)
                 {
                     loginFound = true;
@@ -105,18 +100,82 @@ public class LoginHandler
             node = node.Next;
         }
 
+        //account was not found
         loginFound = false;
         login = new LoginEntry();
         return login;
     }
 }
 
+public class FlightHandler
+{
+    public string[] flights = new string[54];
+
+    public void AddFlights(string strg)
+    {
+        flights = System.IO.File.ReadAllLines(strg);
+    }
+
+    public bool FindFlights(string temp)
+    {
+        for(int i = 0; i < flights.Length; i++)
+        {
+            if(flights[i].Contains(temp))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public string GetFlight(string temp)
+    {
+        for (int i = 0; i < flights.Length; i++)
+        {
+            if (flights[i].Contains(temp))
+            {
+                return flights[i];
+            }
+        }
+        return temp;
+    }
+
+    public string[] GetAllFlights(string temp)
+    {//returns all possible flights
+        //count amount of possible flights
+        int count = 0;
+        for (int i = 0; i < flights.Length; i++)
+        {
+            if (flights[i].Contains(temp))
+            {
+                count++;
+            }
+        }
+
+        //allocate appropriate memory
+        string[] returnList = new string[count];
+        count = 0;
+
+        //create return list
+        for(int i = 0;i < flights.Length;i++)
+        {
+            if(flights[i].Contains(temp))
+            {
+                returnList[count] = flights[i];
+                count++;
+            }
+        }
+
+        return returnList;
+    }
+}
 
 namespace MyVacation
 {
     public static class Variables
     {
         public static LoginHandler logins = new LoginHandler();
-        public static string[] flights = new string[54]; 
+        public static FlightHandler flights = new FlightHandler();
+        //public static string[] flights = new string[54];
     }
 }

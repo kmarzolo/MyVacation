@@ -69,7 +69,7 @@ namespace MyVacation
             login.lastName = LastNameBox.Text;
             login.username = UsernameBox.Text;
             login.password = PasswordBox.Text;
-            
+
             //check if username already exists
             if (Variables.logins.SearchAccounts(login))
             {
