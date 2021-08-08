@@ -26,6 +26,10 @@ namespace MyVacation
             if (Variables.logins.GetLoginStatus())
             {
                 UserLabel.Text = "User: " + Variables.logins.GetLoginAccount().firstName;
+                EmailBox.Text = Variables.logins.GetLoginAccount().email;
+                CardNumber.Text = Variables.logins.GetLoginAccount().cardNumber;
+                ExpirationDate.Text = Variables.logins.GetLoginAccount().expirationDate;
+                CVV.Text = Variables.logins.GetLoginAccount().cvv;
             }
 
             LocationLabel.Text = "To: " + location;
@@ -130,7 +134,7 @@ namespace MyVacation
             month = Int32.Parse(expirationDate.Substring(0, 2));
             year = Int32.Parse(expirationDate.Substring(3, 2));
 
-
+            //if the year is 2021, 8-12 months are valid
             if (year == 21)
             {
                 if ((month < 8) || (month > 12))
@@ -138,6 +142,7 @@ namespace MyVacation
                     return false;
                 }
             }
+            //if the year is higher than 2021, any month is valid
             else if (year > 21)
             {
                 if ((month < 0) || (month > 12))
@@ -145,6 +150,7 @@ namespace MyVacation
                     return false;
                 }
             }
+            //if the year is lower than 2021, invalid
             else if (year < 21)
             {
                 return false;
@@ -162,7 +168,17 @@ namespace MyVacation
             if (Variables.logins.GetLoginStatus())
             {
                 UserLabel.Text = "User: " + Variables.logins.GetLoginAccount().firstName;
+                EmailBox.Text = Variables.logins.GetLoginAccount().email;
+                CardNumber.Text = Variables.logins.GetLoginAccount().cardNumber;
+                ExpirationDate.Text = Variables.logins.GetLoginAccount().expirationDate;
+                CVV.Text = Variables.logins.GetLoginAccount().cvv;
             }
+        }
+
+        private void SignUpButton_Click(object sender, EventArgs e)
+        {
+            SignUpForm signupform = new SignUpForm();
+            signupform.ShowDialog();
         }
     }
 }

@@ -42,6 +42,8 @@ namespace MyVacation
             this.ExpirationDate = new System.Windows.Forms.MaskedTextBox();
             this.Message = new System.Windows.Forms.Label();
             this.CardNumber = new System.Windows.Forms.MaskedTextBox();
+            this.EmailBox = new System.Windows.Forms.TextBox();
+            this.label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UserLabel
@@ -58,7 +60,7 @@ namespace MyVacation
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 91);
+            this.label1.Location = new System.Drawing.Point(27, 130);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 18);
             this.label1.TabIndex = 2;
@@ -68,7 +70,7 @@ namespace MyVacation
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(46, 123);
+            this.label2.Location = new System.Drawing.Point(27, 162);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 18);
             this.label2.TabIndex = 3;
@@ -78,7 +80,7 @@ namespace MyVacation
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(46, 155);
+            this.label3.Location = new System.Drawing.Point(27, 194);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 18);
             this.label3.TabIndex = 4;
@@ -87,16 +89,16 @@ namespace MyVacation
             // CVV
             // 
             this.CVV.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CVV.Location = new System.Drawing.Point(171, 152);
+            this.CVV.Location = new System.Drawing.Point(152, 191);
             this.CVV.MaxLength = 3;
             this.CVV.Name = "CVV";
             this.CVV.PasswordChar = '*';
-            this.CVV.Size = new System.Drawing.Size(196, 26);
+            this.CVV.Size = new System.Drawing.Size(230, 26);
             this.CVV.TabIndex = 2;
             // 
             // BuyButton
             // 
-            this.BuyButton.Location = new System.Drawing.Point(105, 226);
+            this.BuyButton.Location = new System.Drawing.Point(105, 265);
             this.BuyButton.Name = "BuyButton";
             this.BuyButton.Size = new System.Drawing.Size(75, 23);
             this.BuyButton.TabIndex = 4;
@@ -106,7 +108,7 @@ namespace MyVacation
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(225, 226);
+            this.CancelButton.Location = new System.Drawing.Point(225, 265);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 5;
@@ -132,6 +134,7 @@ namespace MyVacation
             this.SignUpButton.TabIndex = 7;
             this.SignUpButton.Text = "Sign Up";
             this.SignUpButton.UseVisualStyleBackColor = true;
+            this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
             // 
             // LocationLabel
             // 
@@ -146,17 +149,17 @@ namespace MyVacation
             // ExpirationDate
             // 
             this.ExpirationDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpirationDate.Location = new System.Drawing.Point(171, 120);
+            this.ExpirationDate.Location = new System.Drawing.Point(152, 159);
             this.ExpirationDate.Mask = "00/00";
             this.ExpirationDate.Name = "ExpirationDate";
-            this.ExpirationDate.Size = new System.Drawing.Size(196, 26);
+            this.ExpirationDate.Size = new System.Drawing.Size(230, 26);
             this.ExpirationDate.TabIndex = 1;
             this.ExpirationDate.ValidatingType = typeof(System.DateTime);
             // 
             // Message
             // 
             this.Message.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Message.Location = new System.Drawing.Point(1, 195);
+            this.Message.Location = new System.Drawing.Point(1, 234);
             this.Message.Name = "Message";
             this.Message.Size = new System.Drawing.Size(410, 23);
             this.Message.TabIndex = 10;
@@ -166,18 +169,38 @@ namespace MyVacation
             // CardNumber
             // 
             this.CardNumber.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CardNumber.Location = new System.Drawing.Point(171, 88);
+            this.CardNumber.Location = new System.Drawing.Point(152, 127);
             this.CardNumber.Mask = "0000 0000 0000 0000";
             this.CardNumber.Name = "CardNumber";
-            this.CardNumber.Size = new System.Drawing.Size(196, 26);
+            this.CardNumber.Size = new System.Drawing.Size(230, 26);
             this.CardNumber.TabIndex = 0;
             this.CardNumber.ValidatingType = typeof(int);
+            // 
+            // EmailBox
+            // 
+            this.EmailBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailBox.Location = new System.Drawing.Point(152, 95);
+            this.EmailBox.Name = "EmailBox";
+            this.EmailBox.Size = new System.Drawing.Size(230, 26);
+            this.EmailBox.TabIndex = 11;
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(27, 98);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(48, 18);
+            this.label.TabIndex = 12;
+            this.label.Text = "Email";
             // 
             // PurchaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 305);
+            this.Controls.Add(this.label);
+            this.Controls.Add(this.EmailBox);
             this.Controls.Add(this.CardNumber);
             this.Controls.Add(this.Message);
             this.Controls.Add(this.ExpirationDate);
@@ -213,5 +236,7 @@ namespace MyVacation
         private System.Windows.Forms.MaskedTextBox ExpirationDate;
         private System.Windows.Forms.Label Message;
         private System.Windows.Forms.MaskedTextBox CardNumber;
+        private System.Windows.Forms.TextBox EmailBox;
+        private System.Windows.Forms.Label label;
     }
 }

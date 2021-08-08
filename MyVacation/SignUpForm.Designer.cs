@@ -253,7 +253,7 @@ namespace MyVacation
             this.CVVBox.MaxLength = 3;
             this.CVVBox.Name = "CVVBox";
             this.CVVBox.Size = new System.Drawing.Size(236, 29);
-            this.CVVBox.TabIndex = 8;
+            this.CVVBox.TabIndex = 2;
             // 
             // label7
             // 
@@ -300,7 +300,7 @@ namespace MyVacation
             this.PreviousButton.Location = new System.Drawing.Point(109, 294);
             this.PreviousButton.Name = "PreviousButton";
             this.PreviousButton.Size = new System.Drawing.Size(75, 23);
-            this.PreviousButton.TabIndex = 14;
+            this.PreviousButton.TabIndex = 9;
             this.PreviousButton.Text = "Previous";
             this.PreviousButton.UseVisualStyleBackColor = true;
             this.PreviousButton.Click += new System.EventHandler(this.PreviousButton_Click);
@@ -312,7 +312,7 @@ namespace MyVacation
             this.CardNumberBox.Mask = "0000 0000 0000 0000";
             this.CardNumberBox.Name = "CardNumberBox";
             this.CardNumberBox.Size = new System.Drawing.Size(236, 29);
-            this.CardNumberBox.TabIndex = 15;
+            this.CardNumberBox.TabIndex = 0;
             this.CardNumberBox.ValidatingType = typeof(int);
             // 
             // ExpirationDateBox
@@ -322,7 +322,7 @@ namespace MyVacation
             this.ExpirationDateBox.Mask = "00/00";
             this.ExpirationDateBox.Name = "ExpirationDateBox";
             this.ExpirationDateBox.Size = new System.Drawing.Size(236, 29);
-            this.ExpirationDateBox.TabIndex = 15;
+            this.ExpirationDateBox.TabIndex = 1;
             this.ExpirationDateBox.ValidatingType = typeof(System.DateTime);
             // 
             // SignUpForm
