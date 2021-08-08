@@ -100,8 +100,13 @@ namespace MyVacation
             departdate = DepartBox.Text;
             returndate = ReturnBox.Text;
 
+            //if no location is entered for start location
+            if(startlocation == "")
+            {
+                startlocation = "Anywhere";
+            }
             //search list for startlocation
-            if (Variables.flights.FindFlights(startlocation))
+            else if (Variables.flights.FindFlights(startlocation))
             {
                 startlocation = Variables.flights.GetFlight(startlocation);
             }

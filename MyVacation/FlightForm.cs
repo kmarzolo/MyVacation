@@ -34,9 +34,9 @@ namespace MyVacation
             DateRange.Text = departdate + '-' + returndate;
 
             //set location labels
-            StartLocation.Text = startlocation;
+            StartLocation.Text = "From: " + startlocation;
             location = endlocation;
-            EndLocation.Text = endlocation;
+            EndLocation.Text = "To: " + endlocation;
 
             //set prices
             int price = randomNumber.Next(500, 2000);
