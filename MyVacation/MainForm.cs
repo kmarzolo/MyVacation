@@ -13,10 +13,6 @@ namespace MyVacation
 {
     public partial class MainForm : Form
     {
-        LinkedList<Flight> flights = new LinkedList<Flight>(); //to hold all flights
-        Flight flight;
-        LinkedListNode<Flight> flightnode;
-
         public MainForm()
         {//startup form, first page user sees
             InitializeComponent();
@@ -24,12 +20,7 @@ namespace MyVacation
             SignOutButton.Hide();
 
             //collect list of all flights
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\kmarz\source\repos\MyVacation\MyVacation\Flight Log.txt");
-            foreach (string line in lines)
-            {
-                flight.endLocation = line;
-                flights.AddLast(flight);
-            }
+            Variables.flights = System.IO.File.ReadAllLines(@"C:\Users\kmarz\source\repos\MyVacation\MyVacation\Flight Log.txt");
         }
 
         private void SignUpButton_Click(object sender, EventArgs e)
@@ -101,21 +92,18 @@ namespace MyVacation
             string departdate = DepartBox.Text;
             string returndate = ReturnBox.Text;
 
-            flightnode = flights.First;
-
-            //search
-            while (flightnode.Next != null)
+            //search flight list for location
+            for(int i = 0; i < Variables.flights.Length; i++)
             {
-                if (flightnode.Value.endLocation.Contains(location))
+                if(Variables.flights[i].Contains(location))
                 {
                     //create label for displaying information;
                     Label city = new Label();
-                    city.Text = flightnode.Value.endLocation;
-                    city.Name = flightnode.Value.endLocation;
+                    city.Text = Variables.flights[i];
+                    city.Name = Variables.flights[i];
                     city.Dock = DockStyle.Fill;
                     city.TextAlign = ContentAlignment.MiddleCenter;
                     city.Font = new Font("Arial", 12, FontStyle.Regular);
-
 
                     //create button for purchasing flight
                     Button select = new Button();
@@ -132,11 +120,7 @@ namespace MyVacation
                     FlightTable.Controls.Add(select, 3, FlightTable.RowCount);
                     FlightTable.RowCount++;
                 }
-
-                //move on to next node
-                flightnode = flightnode.Next;
             }
-
         }
 
         private void SeePrices_Click(object sender, EventArgs e)
@@ -150,8 +134,6 @@ namespace MyVacation
         {
             Variables.logins.SetLoginStatus(false);
             Variables.logins.SetLoginAccount(new LoginEntry());
-            //loginFound = false;
-            //login = new LoginEntry();
             
             Welcome.Text = "Welcome";
             SignOutButton.Hide();

@@ -37,20 +37,25 @@ public class LoginHandler
     {
         return loginFound;
     }
+
     public void SetLoginStatus(bool temp)
     {
         loginFound = temp;
     }
+
     public LoginEntry GetLoginAccount()
     {
         return login;
     }
+
     public void SetLoginAccount(LoginEntry temp)
     {
         login = temp;
     }
+
     public void AddAccount(LoginEntry temp)
     {
+        //check if list is full
         if ((logins.First == null) && (logins.Last == null))
         {
             logins.AddFirst(temp);
@@ -64,8 +69,9 @@ public class LoginHandler
 
         logins.AddLast(temp);
     }
+
     public bool SearchAccounts(LoginEntry temp)
-    {
+    {//search for accounts
         node = logins.First;
         while (!(node == null))
         {
@@ -80,8 +86,9 @@ public class LoginHandler
         loginFound = false;
         return false;
     }
+
     public LoginEntry VerifyAccount(string username, string password)
-    {
+    {//used to check if account exists
         node = logins.First;
         while (!(node == null))
         {
@@ -110,5 +117,6 @@ namespace MyVacation
     public static class Variables
     {
         public static LoginHandler logins = new LoginHandler();
+        public static string[] flights = new string[54]; 
     }
 }
