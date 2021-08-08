@@ -50,6 +50,7 @@ namespace MyVacation
             this.SearchMessage = new System.Windows.Forms.Label();
             this.DepartBox = new System.Windows.Forms.MaskedTextBox();
             this.ReturnBox = new System.Windows.Forms.MaskedTextBox();
+            this.AboutUsButton = new System.Windows.Forms.Button();
             this.FlightTable.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -187,7 +188,7 @@ namespace MyVacation
             this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
-            this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 153F));
+            this.FlightTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154F));
             this.FlightTable.Controls.Add(this.label2, 0, 0);
             this.FlightTable.Controls.Add(this.label3, 1, 0);
             this.FlightTable.Controls.Add(this.label4, 2, 0);
@@ -195,15 +196,15 @@ namespace MyVacation
             this.FlightTable.Location = new System.Drawing.Point(89, 340);
             this.FlightTable.Name = "FlightTable";
             this.FlightTable.RowCount = 1;
-            this.FlightTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.FlightTable.Size = new System.Drawing.Size(608, 35);
+            this.FlightTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.FlightTable.Size = new System.Drawing.Size(609, 36);
             this.FlightTable.TabIndex = 15;
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 21);
+            this.label2.Location = new System.Drawing.Point(60, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 0;
@@ -213,7 +214,7 @@ namespace MyVacation
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(194, 21);
+            this.label3.Location = new System.Drawing.Point(194, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 1;
@@ -223,7 +224,7 @@ namespace MyVacation
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(345, 21);
+            this.label4.Location = new System.Drawing.Point(345, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 2;
@@ -233,7 +234,7 @@ namespace MyVacation
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(512, 21);
+            this.label9.Location = new System.Drawing.Point(512, 22);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 13);
             this.label9.TabIndex = 3;
@@ -280,6 +281,18 @@ namespace MyVacation
             this.ReturnBox.TabIndex = 9;
             this.ReturnBox.ValidatingType = typeof(System.DateTime);
             // 
+            // AboutUsButton
+            // 
+            this.AboutUsButton.AutoSize = true;
+            this.AboutUsButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AboutUsButton.Location = new System.Drawing.Point(3, 25);
+            this.AboutUsButton.Name = "AboutUsButton";
+            this.AboutUsButton.Size = new System.Drawing.Size(90, 29);
+            this.AboutUsButton.TabIndex = 18;
+            this.AboutUsButton.Text = "About Us";
+            this.AboutUsButton.UseVisualStyleBackColor = true;
+            this.AboutUsButton.Click += new System.EventHandler(this.AboutUsButton_Click);
+            // 
             // MainForm
             // 
             this.AcceptButton = this.SearchButton;
@@ -287,6 +300,7 @@ namespace MyVacation
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(774, 507);
+            this.Controls.Add(this.AboutUsButton);
             this.Controls.Add(this.ReturnBox);
             this.Controls.Add(this.DepartBox);
             this.Controls.Add(this.SearchMessage);
@@ -338,6 +352,7 @@ namespace MyVacation
         private System.Windows.Forms.Label SearchMessage;
         private System.Windows.Forms.MaskedTextBox DepartBox;
         private System.Windows.Forms.MaskedTextBox ReturnBox;
+        private System.Windows.Forms.Button AboutUsButton;
     }
 }
 

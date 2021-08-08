@@ -34,13 +34,13 @@ namespace MyVacation
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.ExpirationDate = new System.Windows.Forms.TextBox();
             this.CVV = new System.Windows.Forms.TextBox();
             this.BuyButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.LoginButton = new System.Windows.Forms.Button();
             this.SignUpButton = new System.Windows.Forms.Button();
             this.LocationLabel = new System.Windows.Forms.Label();
+            this.ExpirationDate = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // UserLabel
@@ -91,15 +91,6 @@ namespace MyVacation
             this.label3.Size = new System.Drawing.Size(42, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "CVV";
-            // 
-            // ExpirationDate
-            // 
-            this.ExpirationDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpirationDate.Location = new System.Drawing.Point(174, 120);
-            this.ExpirationDate.MaxLength = 5;
-            this.ExpirationDate.Name = "ExpirationDate";
-            this.ExpirationDate.Size = new System.Drawing.Size(178, 26);
-            this.ExpirationDate.TabIndex = 1;
             // 
             // CVV
             // 
@@ -160,18 +151,28 @@ namespace MyVacation
             this.LocationLabel.TabIndex = 9;
             this.LocationLabel.Text = "To: Location";
             // 
+            // ExpirationDate
+            // 
+            this.ExpirationDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExpirationDate.Location = new System.Drawing.Point(174, 120);
+            this.ExpirationDate.Mask = "00/00";
+            this.ExpirationDate.Name = "ExpirationDate";
+            this.ExpirationDate.Size = new System.Drawing.Size(178, 26);
+            this.ExpirationDate.TabIndex = 1;
+            this.ExpirationDate.ValidatingType = typeof(System.DateTime);
+            // 
             // PurchaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 305);
+            this.Controls.Add(this.ExpirationDate);
             this.Controls.Add(this.LocationLabel);
             this.Controls.Add(this.SignUpButton);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.BuyButton);
             this.Controls.Add(this.CVV);
-            this.Controls.Add(this.ExpirationDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -191,12 +192,12 @@ namespace MyVacation
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox ExpirationDate;
         private System.Windows.Forms.TextBox CVV;
         private System.Windows.Forms.Button BuyButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Button SignUpButton;
         private System.Windows.Forms.Label LocationLabel;
+        private System.Windows.Forms.MaskedTextBox ExpirationDate;
     }
 }

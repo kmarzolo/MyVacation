@@ -87,6 +87,12 @@ namespace MyVacation
 
         }
 
+        private void AboutUsButton_Click(object sender, EventArgs e)
+        {
+            AboutUs aboutus = new AboutUs();
+            aboutus.ShowDialog();
+        }
+
         private void SetUpFlightTable()
         {
             SearchMessage.Hide();
