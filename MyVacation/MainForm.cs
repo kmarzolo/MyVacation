@@ -118,6 +118,11 @@ namespace MyVacation
                 return;
             }
 
+            if (!CheckDates(departdate, returndate))
+            {
+                return;
+            }
+
             //Search flight list for location
             if (Variables.flights.FindFlights(endlocation))
             {
@@ -156,6 +161,81 @@ namespace MyVacation
                 SearchMessage.Text = "Start Location Not Found, Enter Another Location";
                 return;
             }
+        }
+
+        private bool CheckDates(string date1, string date2)
+        {//check if dates are invalid
+            int month1, day1, year1;
+            int month2, day2, year2;
+
+            //break up dates
+            month1 = Int32.Parse(date1.Substring(0, 2));
+            day1 = Int32.Parse(date1.Substring(3, 2));
+            year1 = Int32.Parse(date1.Substring(6, 4));
+            month2 = Int32.Parse(date2.Substring(0, 2));
+            day2 = Int32.Parse(date2.Substring(3, 2));
+            year2 = Int32.Parse(date2.Substring(6, 4));
+
+            if ((month1 > month2) || (day1 > day2) || (year1 > year2))
+            {
+                SearchMessage.Show();
+                SearchMessage.Text = "Return date cannot be before depart date";
+                return false;
+            }
+
+            if(!MonthlyRange(month1, day1, year1))
+            {
+                SearchMessage.Show();
+                SearchMessage.Text = "Depart date out of range";
+                return false;
+            }
+            if(!MonthlyRange(month2, day2,year2))
+            {
+                SearchMessage.Show();
+                SearchMessage.Text = "Return date out of range";
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool MonthlyRange(int month, int day, int year)
+        {
+            if (year == 2021)
+            {
+                if (month < 8)
+                {
+                    return false;
+                }
+            }
+            if(year < 2021)
+            {
+                return false;
+            }
+            if (month == 2)
+            {
+                if ((day < 1) || (day > 28))
+                {
+                    return false;
+                }
+            }
+            else if ((month == 1) || (month == 3) || (month == 5) ||
+                (month == 7) || (month == 8) || (month == 10) || (month == 12))
+            {
+                if ((day < 1) || (day > 31))
+                {
+                    return false;
+                }
+            }
+            else if ((month == 4) || (month == 6) || (month == 9) || (month == 11))
+            {
+                if ((day < 1) || (day > 30))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         private void SeePrices_Click(object sender, EventArgs e)
