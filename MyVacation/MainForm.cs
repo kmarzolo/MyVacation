@@ -21,8 +21,6 @@ namespace MyVacation
             SignOutButton.Hide();
             SearchMessage.Hide();
 
-            //collect list of all flights
-            //Variables.flights = System.IO.File.ReadAllLines(@"C:\Users\kmarz\source\repos\MyVacation\MyVacation\Flight Log.txt");
             Variables.flights.AddFlights(@"C:\Users\kmarz\source\repos\MyVacation\MyVacation\Flight Log.txt");
         }
 
@@ -103,19 +101,20 @@ namespace MyVacation
             returndate = ReturnBox.Text;
 
             //search list for startlocation
-            if(Variables.flights.FindFlights(startlocation))
+            if (Variables.flights.FindFlights(startlocation))
             {
                 startlocation = Variables.flights.GetFlight(startlocation);
             }
             else
             {
+                //show error message
                 SearchMessage.Show();
                 SearchMessage.Text = "Start Location Not Found, Enter Another Location";
                 return;
             }
 
             //Search flight list for location
-            if(Variables.flights.FindFlights(endlocation))
+            if (Variables.flights.FindFlights(endlocation))
             {
                 string[] tempList = Variables.flights.GetAllFlights(endlocation);
 
@@ -147,6 +146,7 @@ namespace MyVacation
             }
             else
             {
+                //show error message
                 SearchMessage.Show();
                 SearchMessage.Text = "Start Location Not Found, Enter Another Location";
                 return;
@@ -163,9 +163,11 @@ namespace MyVacation
 
         private void SignOutButton_Click(object sender, EventArgs e)
         {
+            //log out
             Variables.logins.SetLoginStatus(false);
             Variables.logins.SetLoginAccount(new LoginEntry());
 
+            //show sign up button
             Welcome.Text = "Welcome";
             SignOutButton.Hide();
             SignUpButton.Show();

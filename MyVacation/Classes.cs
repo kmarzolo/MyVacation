@@ -14,6 +14,10 @@ public struct LoginEntry
     public string lastName;
     public string username;
     public string password;
+    public string email;
+    public string cardNumber;
+    public string expirationDate;
+    public string cvv;
 };
 
 public class LoginHandler
@@ -113,11 +117,13 @@ public class FlightHandler
 
     public void AddFlights(string strg)
     {
+        //read flights from file
         flights = System.IO.File.ReadAllLines(strg);
     }
 
     public bool FindFlights(string temp)
     {
+        //search flight in list
         for(int i = 0; i < flights.Length; i++)
         {
             if(flights[i].Contains(temp))
@@ -130,6 +136,7 @@ public class FlightHandler
     
     public string GetFlight(string temp)
     {
+        //retrieve flight
         for (int i = 0; i < flights.Length; i++)
         {
             if (flights[i].Contains(temp))
@@ -176,6 +183,5 @@ namespace MyVacation
     {
         public static LoginHandler logins = new LoginHandler();
         public static FlightHandler flights = new FlightHandler();
-        //public static string[] flights = new string[54];
     }
 }
