@@ -18,6 +18,7 @@ namespace MyVacation
         {
             InitializeComponent();
             Message.Hide();
+            SignOutButton.Hide();
 
             flight = Variables.flights.GetFlight();
 
@@ -29,6 +30,11 @@ namespace MyVacation
                 CardNumber.Text = Variables.logins.GetLoginAccount().cardNumber;
                 ExpirationDate.Text = Variables.logins.GetLoginAccount().expirationDate;
                 CVV.Text = Variables.logins.GetLoginAccount().cvv;
+
+                //hide login and sign up buttons
+                LoginButton.Hide();
+                SignUpButton.Hide();
+                SignOutButton.Show();
             }
 
             FromLocationLabel.Text = "From: " + flight.startlocation;
@@ -51,10 +57,37 @@ namespace MyVacation
 
         private void BuyButton_Click(object sender, EventArgs e)
         {
+            string email = EmailBox.Text;
             string cardNumber = CardNumber.Text;
             string expirationDate = ExpirationDate.Text;
             string cvv = CVV.Text;
             Message.Hide();
+
+            //check if user left textboxes empty
+            if(email == "")
+            {
+                Message.Show();
+                Message.Text = "Please enter email addresses";
+                return;
+            }
+            if(cardNumber.Contains("  "))
+            {
+                Message.Show();
+                Message.Text = "Please enter in valid credit card";
+                return;
+            }
+            if (expirationDate.Contains("  "))
+            {
+                Message.Show();
+                Message.Text = "Please enter in valid credit card";
+                return;
+            }
+            if (cvv.Contains("  "))
+            {
+                Message.Show();
+                Message.Text = "Please enter in valid credit card";
+                return;
+            }
 
             //check if card number is valid
             if (!Variables.validation.ValidateCardNumber(cardNumber))
@@ -97,6 +130,11 @@ namespace MyVacation
                 CardNumber.Text = Variables.logins.GetLoginAccount().cardNumber;
                 ExpirationDate.Text = Variables.logins.GetLoginAccount().expirationDate;
                 CVV.Text = Variables.logins.GetLoginAccount().cvv;
+
+                //hide login and signup buttons
+                LoginButton.Hide();
+                SignUpButton.Hide();
+                SignOutButton.Show();
             }
         }
 
@@ -104,6 +142,18 @@ namespace MyVacation
         {
             SignUpForm signupform = new SignUpForm();
             signupform.ShowDialog();
+        }
+
+        private void SignOutButton_Click(object sender, EventArgs e)
+        {
+            LoginButton.Show();
+            SignUpButton.Show();
+            SignOutButton.Hide();
+            EmailBox.Text = "";
+            CardNumber.Text = "";
+            ExpirationDate.Text = "";
+            CVV.Text = "";
+            UserLabel.Text = "User: Guest";
         }
     }
 }

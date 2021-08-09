@@ -173,6 +173,19 @@ namespace MyVacation
             int month1, day1, year1;
             int month2, day2, year2;
 
+            if(date1.Contains("  "))
+            {
+                SearchMessage.Show();
+                SearchMessage.Text = "Please enter in departdate";
+                return false;
+            }
+            if(date2.Contains("  "))
+            {
+                SearchMessage.Show();
+                SearchMessage.Text = "Please enter return date";
+                return false;
+            }
+
             //break up dates
             month1 = Int32.Parse(date1.Substring(0, 2));
             day1 = Int32.Parse(date1.Substring(3, 2));

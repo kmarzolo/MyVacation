@@ -47,6 +47,7 @@ namespace MyVacation
             this.FromLocationLabel = new System.Windows.Forms.Label();
             this.DateRangeLabel = new System.Windows.Forms.Label();
             this.PriceLabel = new System.Windows.Forms.Label();
+            this.SignOutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UserLabel
@@ -97,7 +98,7 @@ namespace MyVacation
             this.CVV.Name = "CVV";
             this.CVV.PasswordChar = '*';
             this.CVV.Size = new System.Drawing.Size(230, 26);
-            this.CVV.TabIndex = 2;
+            this.CVV.TabIndex = 3;
             // 
             // BuyButton
             // 
@@ -156,7 +157,7 @@ namespace MyVacation
             this.ExpirationDate.Mask = "00/00";
             this.ExpirationDate.Name = "ExpirationDate";
             this.ExpirationDate.Size = new System.Drawing.Size(230, 26);
-            this.ExpirationDate.TabIndex = 1;
+            this.ExpirationDate.TabIndex = 2;
             this.ExpirationDate.ValidatingType = typeof(System.DateTime);
             // 
             // Message
@@ -176,7 +177,7 @@ namespace MyVacation
             this.CardNumber.Mask = "0000 0000 0000 0000";
             this.CardNumber.Name = "CardNumber";
             this.CardNumber.Size = new System.Drawing.Size(230, 26);
-            this.CardNumber.TabIndex = 0;
+            this.CardNumber.TabIndex = 1;
             this.CardNumber.ValidatingType = typeof(int);
             // 
             // EmailBox
@@ -185,7 +186,7 @@ namespace MyVacation
             this.EmailBox.Location = new System.Drawing.Point(152, 107);
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.Size = new System.Drawing.Size(230, 26);
-            this.EmailBox.TabIndex = 11;
+            this.EmailBox.TabIndex = 0;
             // 
             // label
             // 
@@ -227,11 +228,22 @@ namespace MyVacation
             this.PriceLabel.TabIndex = 15;
             this.PriceLabel.Text = "Price:";
             // 
+            // SignOutButton
+            // 
+            this.SignOutButton.Location = new System.Drawing.Point(347, 12);
+            this.SignOutButton.Name = "SignOutButton";
+            this.SignOutButton.Size = new System.Drawing.Size(75, 23);
+            this.SignOutButton.TabIndex = 16;
+            this.SignOutButton.Text = "Sign Out";
+            this.SignOutButton.UseVisualStyleBackColor = true;
+            this.SignOutButton.Click += new System.EventHandler(this.SignOutButton_Click);
+            // 
             // PurchaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 331);
+            this.Controls.Add(this.SignOutButton);
             this.Controls.Add(this.PriceLabel);
             this.Controls.Add(this.DateRangeLabel);
             this.Controls.Add(this.FromLocationLabel);
@@ -277,5 +289,6 @@ namespace MyVacation
         private System.Windows.Forms.Label FromLocationLabel;
         private System.Windows.Forms.Label DateRangeLabel;
         private System.Windows.Forms.Label PriceLabel;
+        private System.Windows.Forms.Button SignOutButton;
     }
 }

@@ -108,7 +108,7 @@ namespace MyVacation
             this.ChangePasswordButton.Location = new System.Drawing.Point(16, 34);
             this.ChangePasswordButton.Name = "ChangePasswordButton";
             this.ChangePasswordButton.Size = new System.Drawing.Size(168, 29);
-            this.ChangePasswordButton.TabIndex = 1;
+            this.ChangePasswordButton.TabIndex = 0;
             this.ChangePasswordButton.Text = "Change Password";
             this.ChangePasswordButton.UseVisualStyleBackColor = true;
             this.ChangePasswordButton.Click += new System.EventHandler(this.ChangePasswordButton_Click);
@@ -238,7 +238,7 @@ namespace MyVacation
             this.SubmitUser.Location = new System.Drawing.Point(87, 174);
             this.SubmitUser.Name = "SubmitUser";
             this.SubmitUser.Size = new System.Drawing.Size(75, 23);
-            this.SubmitUser.TabIndex = 4;
+            this.SubmitUser.TabIndex = 9;
             this.SubmitUser.Text = "Submit";
             this.SubmitUser.UseVisualStyleBackColor = true;
             this.SubmitUser.Click += new System.EventHandler(this.SubmitUser_Click);
@@ -248,7 +248,7 @@ namespace MyVacation
             this.CancelUser.Location = new System.Drawing.Point(230, 174);
             this.CancelUser.Name = "CancelUser";
             this.CancelUser.Size = new System.Drawing.Size(75, 23);
-            this.CancelUser.TabIndex = 5;
+            this.CancelUser.TabIndex = 10;
             this.CancelUser.Text = "Cancel";
             this.CancelUser.UseVisualStyleBackColor = true;
             this.CancelUser.Click += new System.EventHandler(this.Cancel_Click);
@@ -259,7 +259,7 @@ namespace MyVacation
             this.LastNameBox.Location = new System.Drawing.Point(144, 64);
             this.LastNameBox.Name = "LastNameBox";
             this.LastNameBox.Size = new System.Drawing.Size(239, 26);
-            this.LastNameBox.TabIndex = 1;
+            this.LastNameBox.TabIndex = 7;
             // 
             // EmailBox
             // 
@@ -267,7 +267,7 @@ namespace MyVacation
             this.EmailBox.Location = new System.Drawing.Point(144, 96);
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.Size = new System.Drawing.Size(239, 26);
-            this.EmailBox.TabIndex = 2;
+            this.EmailBox.TabIndex = 8;
             // 
             // FirstNameBox
             // 
@@ -275,7 +275,7 @@ namespace MyVacation
             this.FirstNameBox.Location = new System.Drawing.Point(144, 32);
             this.FirstNameBox.Name = "FirstNameBox";
             this.FirstNameBox.Size = new System.Drawing.Size(239, 26);
-            this.FirstNameBox.TabIndex = 0;
+            this.FirstNameBox.TabIndex = 6;
             // 
             // label6
             // 
@@ -328,7 +328,7 @@ namespace MyVacation
             this.SubmitCard.Location = new System.Drawing.Point(87, 174);
             this.SubmitCard.Name = "SubmitCard";
             this.SubmitCard.Size = new System.Drawing.Size(75, 23);
-            this.SubmitCard.TabIndex = 3;
+            this.SubmitCard.TabIndex = 9;
             this.SubmitCard.Text = "Submit";
             this.SubmitCard.UseVisualStyleBackColor = true;
             this.SubmitCard.Click += new System.EventHandler(this.SubmitCard_Click);
@@ -338,7 +338,7 @@ namespace MyVacation
             this.CancelCard.Location = new System.Drawing.Point(230, 174);
             this.CancelCard.Name = "CancelCard";
             this.CancelCard.Size = new System.Drawing.Size(75, 23);
-            this.CancelCard.TabIndex = 4;
+            this.CancelCard.TabIndex = 10;
             this.CancelCard.Text = "Cancel";
             this.CancelCard.UseVisualStyleBackColor = true;
             this.CancelCard.Click += new System.EventHandler(this.Cancel_Click);
@@ -350,7 +350,7 @@ namespace MyVacation
             this.ExpirationDateBox.Mask = "00/00";
             this.ExpirationDateBox.Name = "ExpirationDateBox";
             this.ExpirationDateBox.Size = new System.Drawing.Size(170, 26);
-            this.ExpirationDateBox.TabIndex = 1;
+            this.ExpirationDateBox.TabIndex = 7;
             this.ExpirationDateBox.ValidatingType = typeof(System.DateTime);
             // 
             // CardNumberBox
@@ -360,7 +360,7 @@ namespace MyVacation
             this.CardNumberBox.Mask = "0000 0000 0000 0000";
             this.CardNumberBox.Name = "CardNumberBox";
             this.CardNumberBox.Size = new System.Drawing.Size(170, 26);
-            this.CardNumberBox.TabIndex = 0;
+            this.CardNumberBox.TabIndex = 6;
             this.CardNumberBox.ValidatingType = typeof(int);
             // 
             // CVVBox
@@ -370,7 +370,7 @@ namespace MyVacation
             this.CVVBox.MaxLength = 3;
             this.CVVBox.Name = "CVVBox";
             this.CVVBox.Size = new System.Drawing.Size(170, 26);
-            this.CVVBox.TabIndex = 2;
+            this.CVVBox.TabIndex = 8;
             // 
             // label11
             // 
@@ -432,7 +432,7 @@ namespace MyVacation
             this.SubmitPass.Location = new System.Drawing.Point(87, 174);
             this.SubmitPass.Name = "SubmitPass";
             this.SubmitPass.Size = new System.Drawing.Size(75, 23);
-            this.SubmitPass.TabIndex = 3;
+            this.SubmitPass.TabIndex = 9;
             this.SubmitPass.Text = "Submit";
             this.SubmitPass.UseVisualStyleBackColor = true;
             this.SubmitPass.Click += new System.EventHandler(this.SubmitPass_Click);
@@ -442,7 +442,7 @@ namespace MyVacation
             this.CancelPass.Location = new System.Drawing.Point(230, 174);
             this.CancelPass.Name = "CancelPass";
             this.CancelPass.Size = new System.Drawing.Size(75, 23);
-            this.CancelPass.TabIndex = 4;
+            this.CancelPass.TabIndex = 10;
             this.CancelPass.Text = "Cancel";
             this.CancelPass.UseVisualStyleBackColor = true;
             this.CancelPass.Click += new System.EventHandler(this.Cancel_Click);
@@ -484,7 +484,7 @@ namespace MyVacation
             this.NewPassBox.Name = "NewPassBox";
             this.NewPassBox.PasswordChar = '*';
             this.NewPassBox.Size = new System.Drawing.Size(160, 26);
-            this.NewPassBox.TabIndex = 1;
+            this.NewPassBox.TabIndex = 7;
             // 
             // ConfirmPassBox
             // 
@@ -493,7 +493,7 @@ namespace MyVacation
             this.ConfirmPassBox.Name = "ConfirmPassBox";
             this.ConfirmPassBox.PasswordChar = '*';
             this.ConfirmPassBox.Size = new System.Drawing.Size(160, 26);
-            this.ConfirmPassBox.TabIndex = 2;
+            this.ConfirmPassBox.TabIndex = 8;
             // 
             // OldPassBox
             // 
@@ -502,7 +502,7 @@ namespace MyVacation
             this.OldPassBox.Name = "OldPassBox";
             this.OldPassBox.PasswordChar = '*';
             this.OldPassBox.Size = new System.Drawing.Size(160, 26);
-            this.OldPassBox.TabIndex = 0;
+            this.OldPassBox.TabIndex = 6;
             // 
             // PassMessage
             // 
@@ -529,7 +529,7 @@ namespace MyVacation
             this.ChangeCardButton.Location = new System.Drawing.Point(16, 69);
             this.ChangeCardButton.Name = "ChangeCardButton";
             this.ChangeCardButton.Size = new System.Drawing.Size(168, 29);
-            this.ChangeCardButton.TabIndex = 10;
+            this.ChangeCardButton.TabIndex = 1;
             this.ChangeCardButton.Text = "Change Credit Card";
             this.ChangeCardButton.UseVisualStyleBackColor = true;
             this.ChangeCardButton.Click += new System.EventHandler(this.ChangeCardButton_Click);
@@ -540,7 +540,7 @@ namespace MyVacation
             this.UpdateUserButton.Location = new System.Drawing.Point(16, 104);
             this.UpdateUserButton.Name = "UpdateUserButton";
             this.UpdateUserButton.Size = new System.Drawing.Size(168, 29);
-            this.UpdateUserButton.TabIndex = 11;
+            this.UpdateUserButton.TabIndex = 2;
             this.UpdateUserButton.Text = "Update User Info";
             this.UpdateUserButton.UseVisualStyleBackColor = true;
             this.UpdateUserButton.Click += new System.EventHandler(this.UpdateUserButton_Click);
@@ -668,7 +668,7 @@ namespace MyVacation
             this.FlightPanelButton.Location = new System.Drawing.Point(16, 139);
             this.FlightPanelButton.Name = "FlightPanelButton";
             this.FlightPanelButton.Size = new System.Drawing.Size(168, 29);
-            this.FlightPanelButton.TabIndex = 13;
+            this.FlightPanelButton.TabIndex = 3;
             this.FlightPanelButton.Text = "See Flights";
             this.FlightPanelButton.UseVisualStyleBackColor = true;
             this.FlightPanelButton.Click += new System.EventHandler(this.FlightPanelButton_Click);
