@@ -155,6 +155,12 @@ namespace MyVacation
                     return;
                 }
             }
+            else
+            {
+                CardMessage.Show();
+                CardMessage.Text = "Please enter credit card";
+                return;
+            }
 
             //card is valid
             CardMessage.Show();
@@ -165,6 +171,7 @@ namespace MyVacation
             Variables.logins.SetElement("expirationDate", expirationdate);
             Variables.logins.SetElement("cvv", cvv);
             login = Variables.logins.GetLoginAccount();
+
 
             CardLabel.Text = "**** **** **** " + cardNumber.Substring(15, 4);
         }

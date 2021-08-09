@@ -684,11 +684,11 @@ namespace MyVacation
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.ChangePasswordButton);
             this.Controls.Add(this.label);
-            this.Controls.Add(this.CurrentInfoPanel);
             this.Controls.Add(this.UpdateCardPanel);
             this.Controls.Add(this.UpdatePasswardPanel);
             this.Controls.Add(this.UpdateUserPanel);
             this.Controls.Add(this.FlightPanel);
+            this.Controls.Add(this.CurrentInfoPanel);
             this.Name = "AccountForm";
             this.Text = "AccountForm";
             this.CurrentInfoPanel.ResumeLayout(false);
