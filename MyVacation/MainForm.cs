@@ -286,6 +286,7 @@ namespace MyVacation
             }
         }
 
+
         private void SignOutButton_Click(object sender, EventArgs e)
         {
             //log out

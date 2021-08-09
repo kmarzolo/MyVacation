@@ -243,7 +243,6 @@ namespace MyVacation
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 331);
-            this.Controls.Add(this.SignOutButton);
             this.Controls.Add(this.PriceLabel);
             this.Controls.Add(this.DateRangeLabel);
             this.Controls.Add(this.FromLocationLabel);
@@ -262,6 +261,7 @@ namespace MyVacation
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.UserLabel);
+            this.Controls.Add(this.SignOutButton);
             this.Name = "PurchaseForm";
             this.Text = "Buy Flight";
             this.ResumeLayout(false);

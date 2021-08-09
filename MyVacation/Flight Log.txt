@@ -1,56 +1,55 @@
-Detroit, MI, United States
-Atlanta, GA, United States
-Orlando, FL, United States
-Fort Meyers, FL, United States
-Denver, CO, United States
-Myrtle Beach, SC, United States
-New Orleans, LA, United States
-Washington, DC, United States
-Charlotte, NC, United States
-Salt Lake City, UT, United States
-Louisville, KY, United States
-Kansas City, MO, United States
-New York, NY, United States
-Hartford, CT, United States
-Chicago, IL, United States
-Cancun, Mexico
-Puerto Vallarta, Mexico
-Ciudad Obregon, Mexico
-Guadalajara, Mexico
-Mazatian, Mexico
-Acapulco, Mexico
-Rome, Italy
-Bari, Italy
-Bologna, Italy
-Milan, Italy
-Montreal, Canada
-Calgary, Canada
-Edmonton, Canada
-Ottawa, Canada
-Toronto, Canada
-Winnepeg, Canada
-Vancouver, Canada
-Berlin, Germany
-Frankfurt, Germany
-Dusseldorf, Germany
-Munich, Germany
-Nuremberg, Germany
-Seville, Spain
-Barcelona, Spain
-Madrid, Spain
-Valencia, Spain
-London, United Kingdom
-Birmingham, United Kingdom
-Bristol, United Kingdom
-Manchester, United Kingdom
-Newcastle, United Kingdom
-Paris, France
-Calvi, France
-Lourdes, France
-Bordeaux, France
-Nice, France
-Moscow, Russia
-St. Petersburg, Russia
-Tokyo, Japan
-Sydney, Australia
-end of file
+DETROIT, MI, UNITED STATES
+ATLANTA, GA, UNITED STATES
+ORLANDO, FL, UNITED STATES
+FORT MEYERS, FL, UNITED STATES
+DENVER, CO, UNITED STATES
+MYRTLE BEACH, SC, UNITED STATES
+NEW ORLEANS, LA, UNITED STATES
+WASHINGTON, DC, UNITED STATES
+CHARLOTTE, NC, UNITED STATES
+SALT LAKE CITY, UT, UNITED STATES
+LOUISVILLE, KY, UNITED STATES
+KANSAS CITY, MO, UNITED STATES
+NEW YORK, NY, UNITED STATES
+HARTFORD, CT, UNITED STATES
+CHICAGO, IL, UNITED STATES
+CANCUN, MEXICO
+PUERTO VALLARTA, MEXICO
+CIUDAD OBREGON, MEXICO
+GUADALAJARA, MEXICO
+MAZATIAN, MEXICO
+ACAPULCO, MEXICO
+ROME, ITALY
+BARI, ITALY
+BOLOGNA, ITALY
+MILAN, ITALY
+MONTREAL, CANADA
+CALGARY, CANADA
+EDMONTON, CANADA
+OTTAWA, CANADA
+TORONTO, CANADA
+WINNEPEG, CANADA
+VANCOUVER, CANADA
+BERLIN, GERMANY
+FRANKFURT, GERMANY
+DUSSELDORF, GERMANY
+MUNICH, GERMANY
+NUREMBERG, GERMANY
+SEVILLE, SPAIN
+BARCELONA, SPAIN
+MADRID, SPAIN
+VALENCIA, SPAIN
+LONDON, UNITED KINGDOM
+BIRMINGHAM, UNITED KINGDOM
+BRISTOL, UNITED KINGDOM
+MANCHESTER, UNITED KINGDOM
+NEWCASTLE, UNITED KINGDOM
+PARIS, FRANCE
+CALVI, FRANCE
+LOURDES, FRANCE
+BORDEAUX, FRANCE
+NICE, FRANCE
+MOSCOW, RUSSIA
+ST. PETERSBURG, RUSSIA
+TOKYO, JAPAN
+SYDNEY, AUSTRALIA

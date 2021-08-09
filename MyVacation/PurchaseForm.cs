@@ -135,6 +135,7 @@ namespace MyVacation
                 LoginButton.Hide();
                 SignUpButton.Hide();
                 SignOutButton.Show();
+
             }
         }
 

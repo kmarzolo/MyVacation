@@ -93,6 +93,7 @@ namespace MyVacation
             // 
             // StartLocationBox
             // 
+            this.StartLocationBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.StartLocationBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartLocationBox.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.StartLocationBox.Location = new System.Drawing.Point(69, 210);
@@ -134,6 +135,7 @@ namespace MyVacation
             // 
             // EndLocationBox
             // 
+            this.EndLocationBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.EndLocationBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EndLocationBox.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.EndLocationBox.Location = new System.Drawing.Point(229, 210);
