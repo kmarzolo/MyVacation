@@ -83,6 +83,28 @@ namespace MyVacation
             login.expirationDate = ExpirationDateBox.Text;
             login.cvv = CVVBox.Text;
 
+            if(!(login.cardNumber.Contains("  ")))
+            {
+                if (!Variables.validation.ValidateCardNumber(login.cardNumber))
+                {
+                    Message.Show();
+                    Message.ForeColor = Color.Red;
+                    Message.Text = "Card Number Not Valid";
+                    return;
+                }
+            }
+
+            if (!(login.expirationDate == "  /"))
+            {
+                if (!Variables.validation.ValidateExpirationDate(login.expirationDate))
+                {
+                    Message.Show();
+                    Message.ForeColor = Color.Red;
+                    Message.Text = "Expiration Date Not Valid";
+                    return;
+                }
+            }
+
             //check if username already exists
             if (Variables.logins.SearchAccounts(login))
             {

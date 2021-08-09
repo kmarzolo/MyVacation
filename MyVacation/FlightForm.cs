@@ -12,14 +12,10 @@ namespace MyVacation
 {
     public partial class FlightForm : Form
     {
-        string location;
-        public FlightForm()
-        {
-            InitializeComponent();
-        }
+        Flight flight;
+        int deltaPrice, spiritPrice, uaPrice, swPrice, jetbluePrice, aaPrice;
 
-        public FlightForm(string startlocation, string departdate,
-            string returndate, string endlocation)
+        public FlightForm()
         {
             Random randomNumber = new Random(); //used to set prices
             InitializeComponent();
@@ -30,69 +26,76 @@ namespace MyVacation
                 UserLabel.Text = "User: " + Variables.logins.GetLoginAccount().firstName;
             }
 
+            flight = Variables.flights.GetFlight();
+
             //set date range
-            DateRange.Text = departdate + '-' + returndate;
+            DateRange.Text = flight.departdate + '-' + flight.returndate;
 
             //set location labels
-            StartLocation.Text = "From: " + startlocation;
-            location = endlocation;
-            EndLocation.Text = "To: " + endlocation;
+            StartLocation.Text = "From: " + flight.startlocation;
+            EndLocation.Text = "To: " + flight.endlocation;
 
             //set prices
-            int price = randomNumber.Next(500, 2000);
-            DeltaPrice.Text = price.ToString();
-            price = randomNumber.Next(500, 2000);
-            SpiritPrice.Text = price.ToString();
-            price = randomNumber.Next(500, 2000);
-            UAPrice.Text = price.ToString();
-            price = randomNumber.Next(500, 2000);
-            SWPrice.Text = price.ToString();
-            price = randomNumber.Next(500, 2000);
-            JetBluePrice.Text = price.ToString();
-            price = randomNumber.Next(500, 2000);
-            AAPrice.Text = price.ToString();
+            deltaPrice = randomNumber.Next(500, 2000);
+            DeltaPrice.Text = deltaPrice.ToString();
+            spiritPrice = randomNumber.Next(500, 2000);
+            SpiritPrice.Text = spiritPrice.ToString();
+            uaPrice = randomNumber.Next(500, 2000);
+            UAPrice.Text = uaPrice.ToString();
+            swPrice = randomNumber.Next(500, 2000);
+            SWPrice.Text = swPrice.ToString();
+            jetbluePrice = randomNumber.Next(500, 2000);
+            JetBluePrice.Text = jetbluePrice.ToString();
+            aaPrice = randomNumber.Next(500, 2000);
+            AAPrice.Text = aaPrice.ToString();
 
         }
 
         private void DeltaBuy_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PurchaseForm purchaseform = new PurchaseForm(location);
+            Variables.flights.SetPrice(deltaPrice);
+            PurchaseForm purchaseform = new PurchaseForm();
             purchaseform.ShowDialog();
         }
 
         private void SpiritBuy_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PurchaseForm purchaseform = new PurchaseForm(location);
+            Variables.flights.SetPrice(spiritPrice);
+            PurchaseForm purchaseform = new PurchaseForm();
             purchaseform.ShowDialog();
         }
 
         private void UABuy_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PurchaseForm purchaseform = new PurchaseForm(location);
+            Variables.flights.SetPrice(uaPrice);
+            PurchaseForm purchaseform = new PurchaseForm();
             purchaseform.ShowDialog();
         }
 
         private void SWBuy_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PurchaseForm purchaseform = new PurchaseForm(location);
+            Variables.flights.SetPrice(swPrice);
+            PurchaseForm purchaseform = new PurchaseForm();
             purchaseform.ShowDialog();
         }
 
         private void JetBlueBuy_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PurchaseForm purchaseform = new PurchaseForm(location);
+            Variables.flights.SetPrice(jetbluePrice);
+            PurchaseForm purchaseform = new PurchaseForm();
             purchaseform.ShowDialog();
         }
 
         private void AABuy_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PurchaseForm purchaseform = new PurchaseForm(location);
+            Variables.flights.SetPrice(aaPrice);
+            PurchaseForm purchaseform = new PurchaseForm();
             purchaseform.ShowDialog();
         }
 

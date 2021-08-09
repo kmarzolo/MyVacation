@@ -20,6 +20,7 @@ namespace MyVacation
             FlightTable.Hide();
             SignOutButton.Hide();
             SearchMessage.Hide();
+            ProfileButton.Hide();
 
             Variables.flights.AddFlights(@"C:\Users\kmarz\source\repos\MyVacation\MyVacation\Flight Log.txt");
         }
@@ -41,6 +42,8 @@ namespace MyVacation
             {
                 SignOutButton.Hide();
                 SignUpButton.Show();
+                LoginButton.Show();
+                ProfileButton.Hide();
                 Welcome.Text = "Welcome";
             }
             //show sign out button if logged in
@@ -48,6 +51,8 @@ namespace MyVacation
             {
                 SignUpButton.Hide();
                 SignOutButton.Show();
+                LoginButton.Hide();
+                ProfileButton.Show();
                 Welcome.Text = "Welcome " + Variables.logins.GetLoginAccount().firstName;
             }
         }
@@ -101,7 +106,7 @@ namespace MyVacation
             returndate = ReturnBox.Text;
 
             //if no location is entered for start location
-            if(startlocation == "")
+            if (startlocation == "")
             {
                 startlocation = "Anywhere";
             }
@@ -183,13 +188,13 @@ namespace MyVacation
                 return false;
             }
 
-            if(!MonthlyRange(month1, day1, year1))
+            if (!MonthlyRange(month1, day1, year1))
             {
                 SearchMessage.Show();
                 SearchMessage.Text = "Depart date out of range";
                 return false;
             }
-            if(!MonthlyRange(month2, day2,year2))
+            if (!MonthlyRange(month2, day2, year2))
             {
                 SearchMessage.Show();
                 SearchMessage.Text = "Return date out of range";
@@ -197,6 +202,12 @@ namespace MyVacation
             }
 
             return true;
+        }
+
+        private void ProfileButton_Click(object sender, EventArgs e)
+        {
+            AccountForm accountform = new AccountForm();
+            accountform.ShowDialog();
         }
 
         private bool MonthlyRange(int month, int day, int year)
@@ -208,7 +219,7 @@ namespace MyVacation
                     return false;
                 }
             }
-            if(year < 2021)
+            if (year < 2021)
             {
                 return false;
             }
@@ -240,10 +251,26 @@ namespace MyVacation
 
         private void SeePrices_Click(object sender, EventArgs e)
         {
-            string strg = (sender as Button).Name;
-            FlightForm flightform = new
-                FlightForm(startlocation, departdate, returndate, strg);
+            endlocation = (sender as Button).Name;
+
+            Variables.flights.SetFlight(startlocation, endlocation,
+               departdate, returndate, 0);
+
+            FlightForm flightform = new FlightForm();
             flightform.ShowDialog();
+
+            if (Variables.logins.GetLoginStatus())
+            {
+                //show sign out button if logged in
+                if (Variables.logins.GetLoginStatus())
+                {
+                    SignUpButton.Hide();
+                    SignOutButton.Show();
+                    LoginButton.Hide();
+                    ProfileButton.Show();
+                    Welcome.Text = "Welcome " + Variables.logins.GetLoginAccount().firstName;
+                }
+            }
         }
 
         private void SignOutButton_Click(object sender, EventArgs e)
@@ -256,6 +283,8 @@ namespace MyVacation
             Welcome.Text = "Welcome";
             SignOutButton.Hide();
             SignUpButton.Show();
+            LoginButton.Show();
+            ProfileButton.Hide();
         }
     }
 }

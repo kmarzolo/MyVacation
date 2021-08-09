@@ -38,12 +38,15 @@ namespace MyVacation
             this.CancelButton = new System.Windows.Forms.Button();
             this.LoginButton = new System.Windows.Forms.Button();
             this.SignUpButton = new System.Windows.Forms.Button();
-            this.LocationLabel = new System.Windows.Forms.Label();
+            this.EndLocationLabel = new System.Windows.Forms.Label();
             this.ExpirationDate = new System.Windows.Forms.MaskedTextBox();
             this.Message = new System.Windows.Forms.Label();
             this.CardNumber = new System.Windows.Forms.MaskedTextBox();
             this.EmailBox = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
+            this.FromLocationLabel = new System.Windows.Forms.Label();
+            this.DateRangeLabel = new System.Windows.Forms.Label();
+            this.PriceLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // UserLabel
@@ -60,7 +63,7 @@ namespace MyVacation
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 130);
+            this.label1.Location = new System.Drawing.Point(27, 142);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 18);
             this.label1.TabIndex = 2;
@@ -70,7 +73,7 @@ namespace MyVacation
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 162);
+            this.label2.Location = new System.Drawing.Point(27, 174);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 18);
             this.label2.TabIndex = 3;
@@ -80,7 +83,7 @@ namespace MyVacation
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 194);
+            this.label3.Location = new System.Drawing.Point(27, 206);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 18);
             this.label3.TabIndex = 4;
@@ -89,7 +92,7 @@ namespace MyVacation
             // CVV
             // 
             this.CVV.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CVV.Location = new System.Drawing.Point(152, 191);
+            this.CVV.Location = new System.Drawing.Point(152, 203);
             this.CVV.MaxLength = 3;
             this.CVV.Name = "CVV";
             this.CVV.PasswordChar = '*';
@@ -98,7 +101,7 @@ namespace MyVacation
             // 
             // BuyButton
             // 
-            this.BuyButton.Location = new System.Drawing.Point(105, 265);
+            this.BuyButton.Location = new System.Drawing.Point(105, 277);
             this.BuyButton.Name = "BuyButton";
             this.BuyButton.Size = new System.Drawing.Size(75, 23);
             this.BuyButton.TabIndex = 4;
@@ -108,7 +111,7 @@ namespace MyVacation
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(225, 265);
+            this.CancelButton.Location = new System.Drawing.Point(225, 277);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 5;
@@ -118,7 +121,7 @@ namespace MyVacation
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(324, 12);
+            this.LoginButton.Location = new System.Drawing.Point(347, 12);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 23);
             this.LoginButton.TabIndex = 6;
@@ -128,7 +131,7 @@ namespace MyVacation
             // 
             // SignUpButton
             // 
-            this.SignUpButton.Location = new System.Drawing.Point(324, 42);
+            this.SignUpButton.Location = new System.Drawing.Point(347, 41);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(75, 23);
             this.SignUpButton.TabIndex = 7;
@@ -136,20 +139,20 @@ namespace MyVacation
             this.SignUpButton.UseVisualStyleBackColor = true;
             this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
             // 
-            // LocationLabel
+            // EndLocationLabel
             // 
-            this.LocationLabel.AutoSize = true;
-            this.LocationLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LocationLabel.Location = new System.Drawing.Point(0, 19);
-            this.LocationLabel.Name = "LocationLabel";
-            this.LocationLabel.Size = new System.Drawing.Size(105, 19);
-            this.LocationLabel.TabIndex = 9;
-            this.LocationLabel.Text = "To: Location";
+            this.EndLocationLabel.AutoSize = true;
+            this.EndLocationLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EndLocationLabel.Location = new System.Drawing.Point(0, 38);
+            this.EndLocationLabel.Name = "EndLocationLabel";
+            this.EndLocationLabel.Size = new System.Drawing.Size(105, 19);
+            this.EndLocationLabel.TabIndex = 9;
+            this.EndLocationLabel.Text = "To: Location";
             // 
             // ExpirationDate
             // 
             this.ExpirationDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExpirationDate.Location = new System.Drawing.Point(152, 159);
+            this.ExpirationDate.Location = new System.Drawing.Point(152, 171);
             this.ExpirationDate.Mask = "00/00";
             this.ExpirationDate.Name = "ExpirationDate";
             this.ExpirationDate.Size = new System.Drawing.Size(230, 26);
@@ -159,7 +162,7 @@ namespace MyVacation
             // Message
             // 
             this.Message.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Message.Location = new System.Drawing.Point(1, 234);
+            this.Message.Location = new System.Drawing.Point(1, 246);
             this.Message.Name = "Message";
             this.Message.Size = new System.Drawing.Size(410, 23);
             this.Message.TabIndex = 10;
@@ -169,7 +172,7 @@ namespace MyVacation
             // CardNumber
             // 
             this.CardNumber.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CardNumber.Location = new System.Drawing.Point(152, 127);
+            this.CardNumber.Location = new System.Drawing.Point(152, 139);
             this.CardNumber.Mask = "0000 0000 0000 0000";
             this.CardNumber.Name = "CardNumber";
             this.CardNumber.Size = new System.Drawing.Size(230, 26);
@@ -179,7 +182,7 @@ namespace MyVacation
             // EmailBox
             // 
             this.EmailBox.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailBox.Location = new System.Drawing.Point(152, 95);
+            this.EmailBox.Location = new System.Drawing.Point(152, 107);
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.Size = new System.Drawing.Size(230, 26);
             this.EmailBox.TabIndex = 11;
@@ -188,23 +191,56 @@ namespace MyVacation
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.Location = new System.Drawing.Point(27, 98);
+            this.label.Location = new System.Drawing.Point(27, 110);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(48, 18);
             this.label.TabIndex = 12;
             this.label.Text = "Email";
             // 
+            // FromLocationLabel
+            // 
+            this.FromLocationLabel.AutoSize = true;
+            this.FromLocationLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FromLocationLabel.Location = new System.Drawing.Point(0, 19);
+            this.FromLocationLabel.Name = "FromLocationLabel";
+            this.FromLocationLabel.Size = new System.Drawing.Size(120, 19);
+            this.FromLocationLabel.TabIndex = 13;
+            this.FromLocationLabel.Text = "From: location";
+            // 
+            // DateRangeLabel
+            // 
+            this.DateRangeLabel.AutoSize = true;
+            this.DateRangeLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateRangeLabel.Location = new System.Drawing.Point(0, 57);
+            this.DateRangeLabel.Name = "DateRangeLabel";
+            this.DateRangeLabel.Size = new System.Drawing.Size(98, 19);
+            this.DateRangeLabel.TabIndex = 14;
+            this.DateRangeLabel.Text = "Date Range";
+            // 
+            // PriceLabel
+            // 
+            this.PriceLabel.AutoSize = true;
+            this.PriceLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PriceLabel.Location = new System.Drawing.Point(0, 76);
+            this.PriceLabel.Name = "PriceLabel";
+            this.PriceLabel.Size = new System.Drawing.Size(54, 19);
+            this.PriceLabel.TabIndex = 15;
+            this.PriceLabel.Text = "Price:";
+            // 
             // PurchaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 305);
+            this.ClientSize = new System.Drawing.Size(434, 331);
+            this.Controls.Add(this.PriceLabel);
+            this.Controls.Add(this.DateRangeLabel);
+            this.Controls.Add(this.FromLocationLabel);
             this.Controls.Add(this.label);
             this.Controls.Add(this.EmailBox);
             this.Controls.Add(this.CardNumber);
             this.Controls.Add(this.Message);
             this.Controls.Add(this.ExpirationDate);
-            this.Controls.Add(this.LocationLabel);
+            this.Controls.Add(this.EndLocationLabel);
             this.Controls.Add(this.SignUpButton);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.CancelButton);
@@ -232,11 +268,14 @@ namespace MyVacation
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Button SignUpButton;
-        private System.Windows.Forms.Label LocationLabel;
+        private System.Windows.Forms.Label EndLocationLabel;
         private System.Windows.Forms.MaskedTextBox ExpirationDate;
         private System.Windows.Forms.Label Message;
         private System.Windows.Forms.MaskedTextBox CardNumber;
         private System.Windows.Forms.TextBox EmailBox;
         private System.Windows.Forms.Label label;
+        private System.Windows.Forms.Label FromLocationLabel;
+        private System.Windows.Forms.Label DateRangeLabel;
+        private System.Windows.Forms.Label PriceLabel;
     }
 }
