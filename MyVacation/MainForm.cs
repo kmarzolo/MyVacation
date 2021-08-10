@@ -325,7 +325,7 @@ namespace MyVacation
 
         private string StateInitials(string state)
         {
-            string initials = null;
+            string initials = state;
 
             if (state == "MICHIGAN")
             {
