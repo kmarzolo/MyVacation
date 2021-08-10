@@ -101,7 +101,11 @@ namespace MyVacation
             SearchMessage.Hide();
             //collect search criteria
             startlocation = StartLocationBox.Text;
+            startlocation = StateInitials(startlocation);
+
             endlocation = EndLocationBox.Text;
+            endlocation = StateInitials(endlocation);
+
             departdate = DepartBox.Text;
             returndate = ReturnBox.Text;
 
@@ -173,13 +177,13 @@ namespace MyVacation
             int month1, day1, year1;
             int month2, day2, year2;
 
-            if(date1.Contains("  "))
+            if (date1.Contains("  "))
             {
                 SearchMessage.Show();
-                SearchMessage.Text = "Please enter in departdate";
+                SearchMessage.Text = "Please enter in depart date";
                 return false;
             }
-            if(date2.Contains("  "))
+            if (date2.Contains("  "))
             {
                 SearchMessage.Show();
                 SearchMessage.Text = "Please enter return date";
@@ -189,10 +193,28 @@ namespace MyVacation
             //break up dates
             month1 = Int32.Parse(date1.Substring(0, 2));
             day1 = Int32.Parse(date1.Substring(3, 2));
-            year1 = Int32.Parse(date1.Substring(6, 4));
+
             month2 = Int32.Parse(date2.Substring(0, 2));
             day2 = Int32.Parse(date2.Substring(3, 2));
+
+            //check length of year
+            int yearlength = date1.Length - 6;
+            if (yearlength < 4)
+            {
+                SearchMessage.Show();
+                SearchMessage.Text = "Please enter valid depart date";
+                return false;
+            }
+            yearlength = date2.Length - 6;
+            if (yearlength < 4)
+            {
+                SearchMessage.Show();
+                SearchMessage.Text = "Please enter valid return date";
+                return false;
+            }
+            year1 = Int32.Parse(date1.Substring(6, yearlength));
             year2 = Int32.Parse(date2.Substring(6, 4));
+
 
             if ((month1 > month2) || (day1 > day2) || (year1 > year2))
             {
@@ -299,6 +321,66 @@ namespace MyVacation
             SignUpButton.Show();
             LoginButton.Show();
             ProfileButton.Hide();
+        }
+
+        private string StateInitials(string state)
+        {
+            string initials = null;
+
+            if (state == "MICHIGAN")
+            {
+                initials = "MI";
+            }
+            if (state == "GEORGIA")
+            {
+                initials = "GA";
+            }
+            if (state == "FLORIDA")
+            {
+                initials = "FL";
+            }
+            if (state == "COLORADO")
+            {
+                initials = "CO";
+            }
+            if (state == "SOUTH CAROLINA")
+            {
+                initials = "SC";
+            }
+            if (state == "LOUISIANA")
+            {
+                initials = "LA";
+            }
+            if (state == "NORTH CAROLINA")
+            {
+                initials = "NC";
+            }
+            if (state == "UTAH")
+            {
+                initials = "UT";
+            }
+            if (state == "KENTUCKY")
+            {
+                initials = "KY";
+            }
+            if (state == "MISSOURI")
+            {
+                initials = "MO";
+            }
+            if (state == "NEW YORK")
+            {
+                initials = "NY";
+            }
+            if (state == "CONNECTICUT")
+            {
+                initials = "CT";
+            }
+            if (state == "ILLINOIS")
+            {
+                initials = "IL";
+            }
+
+            return initials;
         }
     }
 }

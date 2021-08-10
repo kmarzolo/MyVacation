@@ -68,7 +68,7 @@ namespace MyVacation
                 return;
             }
 
-            if(!(CheckEmptyFields()))
+            if (!(CheckEmptyFields()))
             {
                 return;
             }
@@ -83,7 +83,7 @@ namespace MyVacation
             login.expirationDate = ExpirationDateBox.Text;
             login.cvv = CVVBox.Text;
 
-            if(!(login.cardNumber.Contains("  ")))
+            if (!(login.cardNumber.Contains("  ")))
             {
                 if (!Variables.validation.ValidateCardNumber(login.cardNumber))
                 {
@@ -141,7 +141,7 @@ namespace MyVacation
 
         private bool CheckEmptyFields()
         {//check if user filled out fields
-            if(FirstNameBox.Text == "")
+            if (FirstNameBox.Text == "")
             {
                 Message.Show();
                 Message.Text = "First Name cannot be empty";

@@ -28,7 +28,7 @@ public struct LoginEntry
     public string expirationDate;
     public string cvv;
     public Flight flight;
-};
+}
 
 public class LoginHandler
 {

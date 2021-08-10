@@ -64,13 +64,13 @@ namespace MyVacation
             Message.Hide();
 
             //check if user left textboxes empty
-            if(email == "")
+            if (email == "")
             {
                 Message.Show();
                 Message.Text = "Please enter email addresses";
                 return;
             }
-            if(cardNumber.Contains("  "))
+            if (cardNumber.Contains("  "))
             {
                 Message.Show();
                 Message.Text = "Please enter in valid credit card";

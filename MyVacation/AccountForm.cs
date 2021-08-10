@@ -128,7 +128,7 @@ namespace MyVacation
                     CardMessage.Text = "Card number is not valid";
                     return;
                 }
-                
+
                 if (!(expirationdate.Contains("  ")))
                 {
                     bool datecheck = Variables.validation.ValidateExpirationDate(expirationdate);
